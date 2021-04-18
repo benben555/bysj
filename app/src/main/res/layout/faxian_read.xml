@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#f5f5f5"
+        >
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="39dp"
+            android:src="@drawable/fanhui"
+
+            android:onClick="fanhui"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+
+            android:text="爱阅读           "></TextView>
+
+    </LinearLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:gravity="center"
+                android:textColor="#ff5555"
+                android:textSize="30dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:singleLine="false"
+                android:text="对咖啡的热爱">
+
+            </TextView><TextView
+            android:textColor="#ccaa00"
+            android:textSize="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:singleLine="false"
+            android:text="     Do you drink a lot of coffee? The water boiling in the kettle, the aroma1, the first mouthful
+from the cup in the morning – so many people see it as part of a ritual that it inspired an
+expression in English: 'Wake up and smell the coffee!'\n
+     I read the other day in the New Scientist magazine that coffee contains a stimulant2, caffeine,
+ which is the planet's most popular psychoactive drug. In the United States alone, more than
+ 90% of adults are estimated to use it every day. That's a lot of people!\n
+
+     Organisations which research public health thought it too. They're concerned about the addition
+of caffeine to products such as waffles, energy drinks and chewing gum. Lynne Goldman, dean of
+the George Washington University School of Public Health, says that many people don't know how
+ much caffeine they are taking. As a result they could have insomnia3, indigestion or high blood
+ pressure.\n
+
+     I don't want to have any of that but I must say that when I can't have any coffee I feel a bit
+ tired, have a mild headache and find it difficult to concentrate. Scientists say that these must be
+  the withdrawal4 symptoms of caffeine - because coffee can cause an addiction5.\n
+
+     But if you are a coffee lover like me, you shouldn't be afraid because in moderation, caffeine may
+ have some positive effects. A study in the American Journal of Clinical Nutrition linked drinking
+  coffee and tea with a lower risk of diabetes6.\n
+
+     There is an interesting story behind the use of coffee. Stephen Braun, author of Buzz: The
+ Science and Lore7 of Alcohol and Caffeine, says that the substance became popular in Europe
+  with the industrial revolution. There was a race for productivity during that time.\n
+
+     And some famous people believed that coffee has creative powers. French novelist and
+playwright8 Honoré de Balzac and German composer Ludwig van Beethoven are said to have
+liked it a lot.\n
+
+     American film-maker David Lynch ate at the same Los Angeles diner every day for seven years.
+ He drank up to seven cups of coffee with lots of sugar every time, which he said would guarantee
+  him lots of ideas.\n
+
+     What about you: Does coffee fill you with ideas? Is it an important part of your social life?\n">
+
+        </TextView></LinearLayout>
+
+    </ScrollView>
+</LinearLayout>

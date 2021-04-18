@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.a19124.bysj">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".Plan_switchday"></activity>
+        <activity android:name=".More_daka" />
+        <activity android:name=".More_sousuo" />
+        <activity android:name=".More_change" />
+        <activity android:name=".User_more" />
+        <activity android:name=".Shangcheng_xiadanfukuan" />
+        <activity android:name=".Shangcheng_shouye" />
+        <activity android:name=".Plan_switch" />
+        <activity android:name=".User_xieyi" />
+        <activity android:name=".Shangcheng_xiaoxi" />
+        <activity android:name=".Shangcheng_dingdan" />
+        <activity android:name=".Fuxi_xunlian" />
+        <activity android:name=".Faxian_wordTest" />
+        <activity android:name=".Faxian_read" />
+        <activity android:name=".Fuxi_xunlian_beidanci" />
+        <activity android:name=".User_task" />
+        <activity android:name=".Faxian_studygroup" /> <!-- <activity android:name=".wordtest" /> -->
+        <activity android:name=".Faxian_xiaojiangtang" />
+        <activity android:name=".mall" /> <!-- // -->
+        <!-- <activity android:name=".LingoesLd2Reader" /> -->
+        <!-- // -->
+        <activity android:name=".User_help" />
+        <activity android:name=".User_guanyu" />
+        <activity android:name=".User_shoucang" />
+        <activity android:name=".ThemeActivity" />
+        <activity android:name=".ThemeApkActivity" />
+        <activity android:name=".User_plan" />
+        <activity android:name=".Register_zhuce" />
+        <activity android:name=".Chaci_sousuo" />
+        <activity android:name=".OpenActivity" />
+        <activity android:name=".User_Register" />
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Sousuo_xianshi" />
+        <activity android:name=".UserRegisterMain" />
+        <activity android:name=".UserRegisterMessage" />
+        <activity android:name=".UserReplaceMessage" />
+        <activity android:name=".UserReplacePassword" />
+    </application>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+</manifest>

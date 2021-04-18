@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Faxian_xiaojiangtang"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#f5f5f5"
+        >
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="39dp"
+            android:src="@drawable/fanhui"
+
+            android:onClick="fanhui"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+
+            android:text="小讲堂           "></TextView>
+
+    </LinearLayout>
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1">
+            <TextView
+                android:singleLine="false"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="注意： 当有though, although时，后面的从句不能有but，但是 though 和yet可连用\n
+
+　　Although it‘s raining, they are still working in the field.\n
+
+　　虽然在下雨，但他们仍在地里干活。\n
+
+　　He is very old, but he still works very hard.\n
+
+　　虽然他很老，但仍然努力地工作。\n
+
+　　Though the sore be healed, yet a scar may remain.\n
+
+　　伤口虽愈合，但伤疤留下了。 (谚语)"></TextView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="典型例题\n
+
+　　1) ___she is young, she knows quite a lot.\n
+
+　　A. When　B. However　 C. Although　 D. Unless\n
+
+　　答案：C。意为虽然她很年轻，却知道许多。\n
+
+　　2)　as, though 引导的倒装句\n
+
+　　as / though引导的让步从句必须表语或状语提前(形容词、副词、分词、实义动词提前)。\n
+
+　　Child as /though he was, he knew what was the right thing to do.\n
+
+　　= Though he was a small child, he knew what was the right thing to do."></TextView>
+        </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="1">
+                <TextView
+                    android:singleLine="false"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="地点状语从句备考知识点\n
+
+　　地点状语从句从字面上来看，是一个句子做地点状语成分，表示地点、方位，
+通常由where、wherever(no matter where)、anywhere、everywhere引导。
+例如：They will go where they are happy.where they are happy这一从句做地点状语修饰go这个动词;
+We must camp where we can get water. where we can get water这一从句做地点状语修饰camp这个动词。\n
+
+　　地点状语从句比起时间状语从句要简单一些，因为连接词相对单一。
+在地点状语从句中需要注意的一点是其与where引导的定语从句的区别。关键一点是where是否有指代先行词。
+Where引导地点状语从句时，where是从属连词，句子修饰的是主句的谓语动词，where前边没有表示地点的先行词，\n
+
+　　Sit wherever you like.\n
+
+　　你喜欢坐哪儿就坐哪儿。\n
+
+　　Keep it where you can see it.\n
+
+　　把它放在你能看得见的地方。">
+                </TextView>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="vertical"-->
+<!--        android:layout_weight="1">-->
+
+
+<!--        <TextView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:gravity="center"-->
+<!--            android:text="200星币兑换"></TextView>-->
+<!--    </LinearLayout>-->
+
+</LinearLayout>
