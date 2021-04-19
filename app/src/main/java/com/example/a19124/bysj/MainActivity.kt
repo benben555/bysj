@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
 import android.widget.Button
+//import androidx.appcompat.app.AppCompatActivity
 import com.example.myapplication.*
 
 
@@ -16,11 +17,11 @@ class MainActivity : AppCompatActivity() {
 //    var sql:String?=null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-    setTheme(R.style.AppTheme)
+  //  setTheme(R.style.AppTheme)
     setContentView(R.layout.activity_main)
-    
-    val intent: Intent = Intent(this, OpenActivity::class.java);
-    startActivity(intent);
+//    setTheme(R.style.AppTheme)
+//    val intent: Intent = Intent(this, OpenActivity::class.java);
+//    startActivity(intent);
         setContentView(R.layout.activity_main)
         replaceFragment(Navigation_fuxi_Fragment())
 //        Log.d("stmt_messages","conn_first")

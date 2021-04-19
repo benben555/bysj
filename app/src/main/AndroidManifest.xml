@@ -14,6 +14,7 @@
         <activity android:name=".More_sousuo" />
         <activity android:name=".More_change" />
         <activity android:name=".User_more" />
+        <activity android:name=".User_zhenti" />
         <activity android:name=".Shangcheng_xiadanfukuan" />
         <activity android:name=".Shangcheng_shouye" />
         <activity android:name=".Plan_switch" />
@@ -38,9 +39,9 @@
         <activity android:name=".User_plan" />
         <activity android:name=".Register_zhuce" />
         <activity android:name=".Chaci_sousuo" />
-        <activity android:name=".OpenActivity" />
+        <activity android:name=".UserRegisterMain" />
         <activity android:name=".User_Register" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".OpenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -48,7 +49,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".Sousuo_xianshi" />
-        <activity android:name=".UserRegisterMain" />
+        <activity android:name=".MainActivity" />
         <activity android:name=".UserRegisterMessage" />
         <activity android:name=".UserReplaceMessage" />
         <activity android:name=".UserReplacePassword" />

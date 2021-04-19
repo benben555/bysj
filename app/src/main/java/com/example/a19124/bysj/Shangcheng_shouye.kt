@@ -9,6 +9,7 @@ class Shangcheng_shouye : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.shangcheng_shouye)
+
         val txhydh=findViewById<LinearLayout>(R.id.txhydh)
         txhydh.setOnClickListener {
             val intent: Intent = Intent(this, Shangcheng_xiadanfukuan::class.java);

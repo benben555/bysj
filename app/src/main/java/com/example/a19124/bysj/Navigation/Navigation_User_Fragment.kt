@@ -52,6 +52,11 @@ class Navigation_User_Fragment : Fragment() {
             val intent: Intent = Intent(activity, User_xieyi::class.java);
             startActivity(intent);
         }
+        val button_user_zhenti=rootView?.findViewById<Button>(R.id.button_user_zhenti)
+        button_user_zhenti?.setOnClickListener {
+            val intent: Intent = Intent(activity, User_zhenti::class.java);
+            startActivity(intent);
+        }
         val button_user_plan=rootView?.findViewById<Button>(R.id.button_user_plan)
         button_user_plan?.setOnClickListener {
             val intent: Intent = Intent(activity, User_plan::class.java);
@@ -87,8 +92,8 @@ class Navigation_User_Fragment : Fragment() {
 
         val button_user_fenxiang=rootView?.findViewById<Button>(R.id.button_user_fenxiang)
         button_user_fenxiang?.setOnClickListener {
-            val intent: Intent = Intent(activity, User_help::class.java);
-            startActivity(intent);
+//            val intent: Intent = Intent(activity, User_help::class.java);
+//            startActivity(intent);
             val sendIntent = Intent()
             sendIntent.action = Intent.ACTION_SEND
 // 比如发送文本形式的数据内容

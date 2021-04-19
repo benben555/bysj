@@ -78,7 +78,7 @@ public class DBConnection {
                 try {
                     state = getConnection().createStatement();
                     //String sql = "select * from '"+Plan_switch.bj+"' where word = '"+ word + "';";
-                    String sql = "select * from allck where word like '"+ word + "';";
+                    String sql = "select * from youdao where word like '"+ word + "';";
                     ResultSet resultSet = state.executeQuery(sql);
                     while(resultSet.next()){
                         String word = resultSet.getString("word");
@@ -110,7 +110,7 @@ public class DBConnection {
                 Statement state = null;
                 try {
                     state = getConnection().createStatement();
-                    String sql = "select num from tongjinum where sjk='"+sjk+"' ;";
+                    String sql = "select num from ciku where sjk='"+sjk+"' ;";
                     ResultSet resultSet = state.executeQuery(sql);
                     while(resultSet.next()){
                          flag[0] = resultSet.getInt("num");

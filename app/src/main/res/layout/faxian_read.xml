@@ -35,7 +35,7 @@
             <TextView
                 android:gravity="center"
                 android:textColor="#ff5555"
-                android:textSize="30dp"
+                android:textSize="40dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:singleLine="false"
@@ -43,10 +43,10 @@
 
             </TextView><TextView
             android:textColor="#ccaa00"
-            android:textSize="15dp"
+            android:textSize="20dp"
+            android:typeface="serif"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:singleLine="false"
             android:text="     Do you drink a lot of coffee? The water boiling in the kettle, the aroma1, the first mouthful
 from the cup in the morning – so many people see it as part of a ritual that it inspired an
 expression in English: 'Wake up and smell the coffee!'\n

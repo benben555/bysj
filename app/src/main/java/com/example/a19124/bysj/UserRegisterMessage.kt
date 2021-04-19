@@ -18,7 +18,7 @@ class UserRegisterMessage : AppCompatActivity() {
         setContentView(R.layout.user_register_message)
         val button=findViewById<Button>(R.id.register_user_button)
         button.setOnClickListener{
-            intent.putExtra("name","ok")
+            intent.putExtra("name","更换用户")
             setResult(Activity.RESULT_OK,intent)
             finish()
 

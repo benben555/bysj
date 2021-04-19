@@ -9,6 +9,8 @@ import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+//import androidx.appcompat.app.AppCompatActivity
+//import androidx.core.content.ContextCompat.startActivity
 
 
 class UserRegisterMain : AppCompatActivity() {
@@ -20,9 +22,10 @@ class UserRegisterMain : AppCompatActivity() {
         val user_register=findViewById<Button>(R.id.button_register_ok)
         user_register.setOnClickListener {
             //传回主码
-            intent.putExtra("name","ok")
+            intent.putExtra("name","更换用户")
             setResult(Activity.RESULT_OK,intent)
-            finish()
+            val intent: Intent = Intent(this, MainActivity::class.java);
+            startActivity(intent);
         }
         val imageView_register_main_fanhui=findViewById<ImageView>(R.id.imageView_register_main_fanhui)
         imageView_register_main_fanhui.setOnClickListener {
@@ -44,6 +47,8 @@ class UserRegisterMain : AppCompatActivity() {
                 name=data?.getStringExtra("name")
                 intent.putExtra("name",name)
                 setResult(Activity.RESULT_OK,intent)
+//                val intent: Intent = Intent(this, MainActivity::class.java);
+//                startActivity(intent);
                 finish()
             }
 

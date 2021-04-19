@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#f5f5f5"
+        >
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="39dp"
+            android:src="@drawable/fanhui"
+            android:onClick="fanhui"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="帮助           ">
+        </TextView>
+
+    </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="历年四级英语真题资料百度网盘地址https://pan.baidu.com/s/1UgwnHF-2q6M6uAyZK865zg#list/path=%2F&amp;parentPath=%2Fsharelink1187762549-163255355232785提取码h75q\n
+历年六级英语真题资料网址https://iosxyg.lanzous.com/b015ae75i\n
+历年考研英语一历年真题资料百度网盘地址https://pan.baidu.com/s/1hjq-Qo7qrZaUe5iKr1b8Qg提取码wsua\n
+历年考研英语二历年真题资料百度网盘地址https://pan.baidu.com/s/1INeulsZuhHRnFKpt3Xa5-Q提取码qn37\n
+历年高考英语真题资料网址http://tiku.gaokao.com/gaokao/a364c355\n"
+        >
+    </TextView>
+
+</LinearLayout>

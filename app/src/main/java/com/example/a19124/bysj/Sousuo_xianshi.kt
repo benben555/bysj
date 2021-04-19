@@ -18,18 +18,18 @@ class Sousuo_xianshi : AppCompatActivity() {
        setContentView(R.layout.sousuo_xianshi)
         str=intent.getStringExtra("message")
         val wordBean = WordBean(str)
-         val textview_xianshi_bj=findViewById<TextView>(R.id.textview_xianshi_bj)
+         val textview_xianshi_bj=findViewById<TextView>(R.id.textview_xianshi_jinyici)
         when(wordBean.flag){
             4->textview_xianshi_bj.setText("四级 , 六级 , 考研")
             6->textview_xianshi_bj.setText("四级 , 六级 , 考研")
             3->textview_xianshi_bj.setText("四级 , 六级 , 考研 , 高考")
             7->textview_xianshi_bj.setText("四级 , 六级 , 考研")
             10->textview_xianshi_bj.setText("四级 , 六级 , 考研 , 有道")
-            else->textview_xianshi_bj.setText("牛津")
+            else->textview_xianshi_bj.setText("有道翻译")
         }
 
-        val textview_xianshi_liju2=findViewById<TextView>(R.id.textview_xianshi_jinyici)
-        textview_xianshi_liju2.setText(wordBean.uid.toString())
+//        val textview_xianshi_liju2=findViewById<TextView>(R.id.textview_xianshi_jinyici)
+//        textview_xianshi_liju2.setText(wordBean.uid.toString())
 
         val textview_xianshi_yinbiao=findViewById<TextView>(R.id.textview_xianshi_yinbiao)
         if(wordBean.msg==null) textview_xianshi_yinbiao.setText(" ")
@@ -40,8 +40,8 @@ class Sousuo_xianshi : AppCompatActivity() {
         Log.d("Sousuo_xianshi",wordBean.toString())
 
 
-        val TextView_a:TextView=findViewById<TextView>(R.id.textview_xianshi_danci)
-        TextView_a.post(Runnable { TextView_a.setText(wordBean.word) })
+//        val TextView_a:TextView=findViewById<TextView>(R.id.textview_xianshi_danci)
+//        TextView_a.post(Runnable { TextView_a.setText(wordBean.word) })
 
 
 

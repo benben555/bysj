@@ -19,7 +19,9 @@ public class OpenActivity extends Activity{
         anima.setDuration(1000);// 设置动画显示时间
         welcomeImg.startAnimation(anima);
         anima.setAnimationListener(new AnimationImpl());
-
+        setTheme(R.style.AppTheme);
+        Intent intent = new Intent(this, UserRegisterMain.class);
+        startActivity(intent);
     }
 
     private class AnimationImpl implements AnimationListener {

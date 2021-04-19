@@ -35,38 +35,79 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:layout_weight="4">
-            <TextView
-                android:layout_weight="1"
-                android:id="@+id/message"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:text="trust"
-                android:textSize="40dp"></TextView>
-            <TextView
-                android:layout_weight="0.5"
-                android:id="@+id/textview_xianshi_yinbiao"
-                android:layout_width="match_parent"
-                android:textSize="20dp"
-                android:layout_height="0dp"
-                android:text="Trust is a tricky business."
-                android:textColor="@android:color/holo_green_dark">
-            </TextView>
             <LinearLayout
                 android:layout_weight="0.5"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:orientation="horizontal">
                 <TextView
+                    android:gravity="center|left"
+                    android:layout_weight="3"
+                    android:id="@+id/message"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:text="trust"
+                    android:textSize="45dp"></TextView>
+                <TextView
+                    android:gravity="center|left"
+                    android:layout_weight="0.5"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:text=" "
+                    android:textSize="50dp"></TextView>
+                <Button
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:textColor="@android:color/holo_green_dark"
+                    android:text="生词本+">
+                </Button>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+                <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:textSize="20dp"
+                    android:gravity="center"
+                android:textColor="@android:color/holo_green_dark"
+                android:text="衍生词+音标："></TextView>
+                <TextView
+                    android:gravity="center"
+                    android:layout_weight="0.5"
+                    android:id="@+id/textview_xianshi_yinbiao"
+                    android:layout_width="match_parent"
+                    android:textSize="20dp"
+                    android:layout_height="match_parent"
+                    android:text="Trust is a tricky business."
+                    android:textColor="@android:color/holo_green_dark">
+                </TextView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:gravity="center"
                     android:id="@+id/textview_xianshi_danci"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="1.5"
                     android:layout_height="match_parent"
                     android:textSize="20dp"
                     android:textColor="@android:color/holo_green_dark"
-                    android:text="单词："></TextView>
+                    android:text="释义："></TextView>
                 <TextView
+                    android:gravity="center"
                     android:textSize="20dp"
+                    android:layout_weight="3"
                     android:id="@+id/textview_xianshi_shiyi"
-                    android:layout_width="match_parent"
+                    android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:textColor="@android:color/holo_green_dark"
                     android:text="释义"></TextView>
@@ -74,7 +115,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="0.5"
+                android:layout_weight="0.3"
                 android:orientation="horizontal">
 <!--                <TextView-->
 <!--                    android:layout_weight="1"-->
@@ -89,12 +130,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
+                    android:text="有道翻译"
                     android:textSize="20dp"
                     android:id="@+id/textview_xianshi_jinyici">
                 </TextView>
             </LinearLayout>
             <TextView
-                android:layout_weight="0.5"
+                android:layout_weight="0.3"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:text="------------------------"
@@ -115,16 +157,7 @@
 
 
         </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="top">
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@android:color/holo_green_dark"
-                android:text="生词本+">
-            </Button>
-        </LinearLayout>
+
+
     </LinearLayout>
 </LinearLayout>

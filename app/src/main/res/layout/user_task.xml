@@ -153,6 +153,11 @@
 
             </LinearLayout>
         </LinearLayout>
+        <TextView
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="----------"></TextView>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="150dp"
@@ -273,6 +278,11 @@
 
             </LinearLayout>
         </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="----------"></TextView>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="50dp"
@@ -358,16 +368,16 @@
             >
             <TextView
                 android:layout_width="0dp"
-                android:text="每兑换一个物品+5星币   /每日上限15星币"
+                android:text="每累计背完500单词奖励100星币"
                 android:gravity="center"
-                android:layout_weight="4"
+                android:layout_weight="8"
                 android:layout_height="match_parent">
             </TextView>
             <TextView
                 android:layout_width="0dp"
                 android:text="已完成"
                 android:gravity="center|right"
-                android:layout_weight="1"
+                android:layout_weight="2"
                 android:layout_height="match_parent">
             </TextView>
             <TextView
@@ -384,16 +394,16 @@
         >
         <TextView
             android:layout_width="0dp"
-            android:text="每兑换一个物品+5星币   /每日上限15星币"
+            android:text="每累计背完2000单词奖励500星币"
             android:gravity="center"
-            android:layout_weight="4"
+            android:layout_weight="8"
             android:layout_height="match_parent">
         </TextView>
         <TextView
             android:layout_width="0dp"
             android:text="已完成"
             android:gravity="center|right"
-            android:layout_weight="1"
+            android:layout_weight="2"
             android:layout_height="match_parent">
         </TextView>
         <TextView
@@ -410,16 +420,16 @@
         >
         <TextView
             android:layout_width="0dp"
-            android:text="每兑换一个物品+5星币   /每日上限15星币"
+            android:text="每看完10篇文章奖励20星币"
             android:gravity="center"
-            android:layout_weight="4"
+            android:layout_weight="8"
             android:layout_height="match_parent">
         </TextView>
         <TextView
             android:layout_width="0dp"
             android:text="已完成"
             android:gravity="center|right"
-            android:layout_weight="1"
+            android:layout_weight="2"
             android:layout_height="match_parent">
         </TextView>
         <TextView
@@ -436,16 +446,16 @@
         >
         <TextView
             android:layout_width="0dp"
-            android:text="每兑换一个物品+5星币   /每日上限15星币"
+            android:text="每看完100篇文章奖励200星币"
             android:gravity="center"
-            android:layout_weight="4"
+            android:layout_weight="8"
             android:layout_height="match_parent">
         </TextView>
         <TextView
             android:layout_width="0dp"
             android:text="已完成"
             android:gravity="center|right"
-            android:layout_weight="1"
+            android:layout_weight="2"
             android:layout_height="match_parent">
         </TextView>
         <TextView

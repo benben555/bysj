@@ -89,6 +89,7 @@ public class WordListRespository {
     public boolean remeberedAll(){
         return wordQueue.isEmpty() && wordList.isEmpty();
     }
+
     private void addWordToQueue(int size) {
         while(!wordList.isEmpty() && wordQueue.size() < size) {
             wordQueue.offer(new WordBeanEx(2,wordList.poll()));
