@@ -20,13 +20,13 @@
         <activity android:name=".User_xieyi" />
         <activity android:name=".Shangcheng_xiaoxi" />
         <activity android:name=".Shangcheng_dingdan" />
-        <activity android:name=".Fuxi_xunlian" />
-        <activity android:name=".Faxian_wordTest" />
-        <activity android:name=".Faxian_read" />
-        <activity android:name=".Fuxi_xunlian_beidanci" />
+        <activity android:name=".Fuxi.Fuxi_xunlian" />
+        <activity android:name=".Faxian.Faxian_wordTest" />
+        <activity android:name=".Faxian.Faxian_read" />
+        <activity android:name=".Fuxi.Fuxi_xunlian_beidanci" />
         <activity android:name=".User_task" />
-        <activity android:name=".Faxian_studygroup" /> <!-- <activity android:name=".wordtest" /> -->
-        <activity android:name=".Faxian_xiaojiangtang" />
+        <activity android:name=".Faxian.Faxian_studygroup" /> <!-- <activity android:name=".wordtest" /> -->
+        <activity android:name=".Faxian.Faxian_xiaojiangtang" />
         <activity android:name=".mall" /> <!-- // -->
         <!-- <activity android:name=".LingoesLd2Reader" /> -->
         <!-- // -->

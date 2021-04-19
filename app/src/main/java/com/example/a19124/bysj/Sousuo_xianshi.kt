@@ -1,20 +1,13 @@
 package com.example.a19124.bysj
 
 
-import android.content.Context
-import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.widget.TextView
 import android.util.Log
 import android.view.View
+import com.example.a19124.bysj.Bean.WordBean
 
-import java.sql.Connection
-import java.sql.DriverManager
-import java.sql.ResultSet
-import java.sql.Statement
-
-import java.util.List
 //import com.mysql.jdbc.log.Log
 
 class Sousuo_xianshi : AppCompatActivity() {

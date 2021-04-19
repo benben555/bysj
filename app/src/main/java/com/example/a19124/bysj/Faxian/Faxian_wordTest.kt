@@ -1,16 +1,16 @@
-package com.example.a19124.bysj
+package com.example.a19124.bysj.Faxian
 
-import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import com.example.a19124.bysj.R
 
-class Faxian_xiaojiangtang : AppCompatActivity() {
+class Faxian_wordTest : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.faxian_xiaojiangtang)
+        setContentView(R.layout.faxian_wordtest)
     }
     public fun fanhui(view: View){
-       finish()
+        finish()
     }
 }

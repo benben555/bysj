@@ -1,14 +1,8 @@
-package com.example.a19124.bysj
-import android.graphics.drawable.Drawable;
+package com.example.a19124.bysj.Faxian
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.BaseAdapter;
-import android.widget.ImageView;
-import android.widget.ListView;
-import android.widget.TextView;
-import android.content.Intent
+import com.example.a19124.bysj.R
 
 class Faxian_studygroup : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

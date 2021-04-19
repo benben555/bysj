@@ -8,6 +8,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import com.example.a19124.bysj.*
+import com.example.a19124.bysj.Faxian.Faxian_read
+import com.example.a19124.bysj.Faxian.Faxian_studygroup
+import com.example.a19124.bysj.Faxian.Faxian_xiaojiangtang
+import com.example.a19124.bysj.Fuxi.Fuxi_xunlian
 
 class Navigation_faxian_Fragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View?

@@ -1,11 +1,13 @@
-package com.example.a19124.bysj;
+package com.example.a19124.bysj.Utils;
 import android.content.Context;
 import android.util.Log;
 
-import  java.sql.*;
-import java.util.Random;
+import com.example.a19124.bysj.Bean.WordBean;
 
-import static java.lang.Math.random;
+import  java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 
 public class DBConnection {
     private static final String TAG = "mysql11111";
@@ -38,7 +40,7 @@ public class DBConnection {
                     String url = "jdbc:mysql://" + ip + ":" + port
                             + "/" + dbName;
                     // 构建连接mysql的字符串
-                    String user = "wyy";
+                    String user = "root";
                     String password = "root";
 
                     // 3.连接JDBC
@@ -159,5 +161,40 @@ public class DBConnection {
         thread.start();
         thread.join();
         return wordBean[0].toString();
+    }
+
+    public static List<WordBean> getRandWord(final int num, final String database) throws InterruptedException  {
+        final List<WordBean> list = new ArrayList<>();
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                Statement state = null;
+                try {
+                    Random r=new Random();
+                    //   int randoms=r.nextInt(getWordnum(sjk));
+                    int randoms=r.nextInt(1000);
+                    state = getConnection().createStatement();
+                    String sql = "select * from "+database+" order by RAND() limit "+num+ ";";
+                    ResultSet resultSet = state.executeQuery(sql);
+                    while(resultSet.next()){
+                        String word = resultSet.getString("word");
+                        String msg = resultSet.getString("shiyi");
+                        String yinbiao = resultSet.getString("yinbiao");
+                        int UID = resultSet.getInt("number");
+                        int flag = resultSet.getInt("bj");
+                        WordBean wordBean = new WordBean(UID,word,msg,yinbiao,flag);
+                        list.add(wordBean);
+                        Log.d(TAG, wordBean.toString());
+                    }
+
+                }
+                catch (SQLException throwables) {
+                    throwables.printStackTrace();
+                }
+            }
+        });
+        thread.start();
+        thread.join();
+        return list;
     }
 }

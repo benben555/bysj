@@ -1,4 +1,4 @@
-package com.example.a19124.bysj;
+package com.example.a19124.bysj.Bean;
 
 import android.support.annotation.NonNull;
 
@@ -69,4 +69,5 @@ public class WordBean {
     public String toString() {
         return word+";"+msg+";"+yinbiao+";"+flag+";"+UID;
     }
+
 }
