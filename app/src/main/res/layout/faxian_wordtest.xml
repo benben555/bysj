@@ -1,26 +1,124 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
-    <LinearLayout
+    tools:context=".Faxian.Faxian_wordTest">
+    <ImageView
+        android:id="@+id/bt_back"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:src="@drawable/fanhui"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="单词测试"
+        android:textSize="25sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/bt_back"
+        />
+
+    <TextView
+        android:id="@+id/tv_test_word"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Word"
+        android:textSize="40sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <Button
+        android:id="@+id/bt_test_1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#f5f5f5"
-        >
+        android:layout_margin="10dp"
+        android:text="示意1"
+        android:textSize="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/guideline2"
 
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="39dp"
-            android:src="@drawable/fanhui"
+        />
+    <Button
+        android:id="@+id/bt_test_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="示意2"
+        android:textSize="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bt_test_1"
 
-            android:onClick="fanhui"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="单词测试           "></TextView>
+        />
+    <Button
+        android:id="@+id/bt_test_3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="示意3"
+        android:textSize="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bt_test_2"
 
-    </LinearLayout>
+        />
+    <Button
+        android:id="@+id/bt_test_4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="示意4"
+        android:textSize="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bt_test_3"
 
-</LinearLayout>
+        />
+    <Button
+        android:id="@+id/bt_dont_kown"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="不认识"
+        android:textSize="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bt_test_4"
+
+        />
+    <TextView
+        android:id="@+id/tv_test_last"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:layout_marginStart="10dp"
+        android:textSize="35sp"
+        app:layout_constraintTop_toBottomOf="@id/bt_dont_kown"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+
+        />
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.75" />
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5" />
+</android.support.constraint.ConstraintLayout>

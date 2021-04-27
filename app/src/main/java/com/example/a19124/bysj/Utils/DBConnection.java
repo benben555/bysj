@@ -170,9 +170,9 @@ public class DBConnection {
             public void run() {
                 Statement state = null;
                 try {
-                    Random r=new Random();
+                    Random r = new Random();
                     //   int randoms=r.nextInt(getWordnum(sjk));
-                    int randoms=r.nextInt(1000);
+                    int randoms = r.nextInt(1000);
                     state = getConnection().createStatement();
                     String sql = "select * from "+database+" order by RAND() limit "+num+ ";";
                     ResultSet resultSet = state.executeQuery(sql);

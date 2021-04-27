@@ -2,34 +2,32 @@ package com.example.a19124.bysj.Bean;
 
 import com.example.a19124.bysj.Utils.DBConnection;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.PriorityQueue;
 import java.util.Queue;
 
-public class WordListRespository {
+public class ReciteWordsRespository {
     public static final int RECOGNIZED = 1;
     public static final int UNCERTAIN = 2;
     public static final int UNRECOGNIZED = 3;
 
-    private static WordListRespository INSTANCE;
+    private static ReciteWordsRespository INSTANCE;
     private String database;
     private int num = 50;
     private Queue<WordBeanEx> wordQueue;
     private Queue<WordBean> wordList;
     private WordBeanEx curWord;
-    private WordListRespository(String database){
+    private ReciteWordsRespository(String database){
         wordList = new LinkedList<>();
         wordQueue = new LinkedList<>();
         this.database = database;
         initList();
     }
-    public static WordListRespository getInstance(String database) {
+    public static ReciteWordsRespository getInstance(String database) {
         if(INSTANCE == null){
-            synchronized (WordListRespository.class){
+            synchronized (ReciteWordsRespository.class){
                 if(INSTANCE == null) {
-                    return INSTANCE = new WordListRespository(database);
+                    return INSTANCE = new ReciteWordsRespository(database);
                 }
             }
         }
@@ -39,6 +37,8 @@ public class WordListRespository {
     public void setWordNum(int num) {
         this.num = num;
     }
+    public void setDatabase(String database) { this.database = database; }
+
     /**
      * 在这里初始化要背的单词
      * 用数据库 DBConnection获取数据，一次获取个数自己设置

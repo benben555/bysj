@@ -7,16 +7,16 @@ import android.view.View
 import android.widget.Button
 import android.widget.TextView
 //import androidx.appcompat.app.AppCompatActivity
-import com.example.a19124.bysj.Utils.DBConnection
 import com.example.a19124.bysj.R
 import com.example.a19124.bysj.Bean.WordBean
-import com.example.a19124.bysj.Bean.WordListRespository
+import com.example.a19124.bysj.Bean.ReciteWordsRespository
 
 class Fuxi_xunlian_beidanci : AppCompatActivity() {
     var str:String?="null"
 
     //拿到仓库类的单例
-    var respository:WordListRespository = WordListRespository.getInstance("siji")
+    var respository: ReciteWordsRespository = ReciteWordsRespository.getInstance("siji")
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.fuxi_xunlian_beidanci)
@@ -26,7 +26,7 @@ class Fuxi_xunlian_beidanci : AppCompatActivity() {
         set(word.toString())
         val button_beidanci_buqueding=findViewById<Button>(R.id.button_beidanci_buqueding)
         button_beidanci_buqueding.setOnClickListener {
-            respository.changeRate(WordListRespository.UNCERTAIN)
+            respository.changeRate(ReciteWordsRespository.UNCERTAIN)
             if(respository.remeberedAll()){
                 finish()
             }
@@ -34,7 +34,7 @@ class Fuxi_xunlian_beidanci : AppCompatActivity() {
         }
         val button_beidanci_burenshi=findViewById<Button>(R.id.button_beidanci_burenshi)
         button_beidanci_burenshi.setOnClickListener {
-            respository.changeRate(WordListRespository.UNRECOGNIZED)
+            respository.changeRate(ReciteWordsRespository.UNRECOGNIZED)
             if(respository.remeberedAll()){
                 finish()
             }
@@ -42,7 +42,7 @@ class Fuxi_xunlian_beidanci : AppCompatActivity() {
         }
         val button_beidanci_renshi=findViewById<Button>(R.id.button_beidanci_renshi)
         button_beidanci_renshi.setOnClickListener {
-            respository.changeRate(WordListRespository.RECOGNIZED)
+            respository.changeRate(ReciteWordsRespository.RECOGNIZED)
             if(respository.remeberedAll()){
                 finish()
             }
