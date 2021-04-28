@@ -9,9 +9,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
-import android.widget.Toast
 import com.example.a19124.bysj.*
-import kotlinx.android.synthetic.main.listitem_xiaozu.*
+import com.example.a19124.bysj.Utils.SecurityLoginUtils
 
 class Navigation_User_Fragment : Fragment() {
 
@@ -27,14 +26,15 @@ class Navigation_User_Fragment : Fragment() {
     ): View? {
         rootView = inflater.inflate(R.layout.navigation_user_fragment, container, false)
         val register=rootView?.findViewById<Button>(R.id.button_user_register)
-        if (name == "注册/登录") {
+        if (!SecurityLoginUtils.getInstance(getContext()).loginStatus) {
             register?.setText("注册/登录")
         } else {
             register?.setText("已登录")
         }
         register?.setOnClickListener {
             if (name == "注册/登录") {
-                val intent = Intent(activity, UserRegisterMain::class.java)
+                SecurityLoginUtils.getInstance(getContext()).logout()
+                val intent = Intent(activity, UserLoginMain::class.java)
                 startActivityForResult(intent, 1)
             } else {
                 val intent = Intent(activity, UserReplaceMessage::class.java)

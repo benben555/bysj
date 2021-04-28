@@ -80,7 +80,7 @@ class UserReplaceMessage : AppCompatActivity(), View.OnClickListener {
         startActivityForResult(intent,REQUESTCODE);
     }
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent) {
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (resultCode != Activity.RESULT_OK) {
             Log.e("TAG--->onresult", "ActivityResult resultCode error")
@@ -91,7 +91,7 @@ class UserReplaceMessage : AppCompatActivity(), View.OnClickListener {
         var bitmap: Bitmap? = null
         val resolver = contentResolver
         if (requestCode == REQUESTCODE) {
-            val uri: Uri = data.data
+            val uri: Uri? = data?.data
             try {
                 bitmap = MediaStore.Images.Media.getBitmap(resolver, uri) //获得图片
             } catch (e: IOException) {
@@ -103,8 +103,8 @@ class UserReplaceMessage : AppCompatActivity(), View.OnClickListener {
 
         //获得路径
         if (requestCode == REQUESTCODE) {
-            var uri: Uri? = data.data
-            uri = geturi(data) //解决方案
+            var uri: Uri? = data?.data
+            uri = data?.let { geturi(it) } //解决方案
             val pro = arrayOf(MediaStore.Images.Media.DATA)
             //好像是android多媒体数据库的封装接口，具体的看Android文档
             val cursor: Cursor = managedQuery(uri, pro, null, null, null)

@@ -1,5 +1,6 @@
 package com.example.a19124.bysj.Utils;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
@@ -11,15 +12,15 @@ import android.preference.PreferenceManager;
  * Description:
  */
 public class SecurityLoginUtils {
-    private static final int  NOT_LOGGED = 0;
-    private static final int LOGGED = 1;
 
     private static SecurityLoginUtils INSTANCE = null;
+
 
     private final String status = "STATUS";
     private SharedPreferences mSharedPreferences;
     private SharedPreferences.Editor mEditor;
 
+    @SuppressLint("CommitPrefEdits")
     private SecurityLoginUtils(Context context) {
         mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
         mEditor = mSharedPreferences.edit();
@@ -35,12 +36,19 @@ public class SecurityLoginUtils {
         return INSTANCE;
     }
     public boolean login(String username,String pwd){
-
+        boolean flag = false;
+        try {
+            flag = DBConnection.checkLogin(username,pwd);
+        }catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         mEditor.putBoolean(status,true);
-        return false;
+        mEditor.apply();
+        return flag;
     }
     public void logout() {
         mEditor.putBoolean(status,false);
+        mEditor.apply();
     }
     public boolean getLoginStatus() {
         return mSharedPreferences.getBoolean(status,false);

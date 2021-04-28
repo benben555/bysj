@@ -197,4 +197,30 @@ public class DBConnection {
         thread.join();
         return list;
     }
+    public static boolean checkLogin(final String username, final String pwd) throws InterruptedException{
+        final boolean[] flag = {false};
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                Statement state = null;
+                try {
+                    state = getConnection().createStatement();
+                    String sql = "select * from user where username='"+username+"' and password='"+pwd+"'";
+                    ResultSet resultSet = state.executeQuery(sql);
+                    while(resultSet.next()){
+                        flag[0] = true;
+
+                        Log.d(TAG,"Login success");
+                    }
+
+                }
+                catch (SQLException throwables) {
+                    throwables.printStackTrace();
+                }
+            }
+        });
+        thread.start();
+        thread.join();
+        return flag[0];
+    }
 }

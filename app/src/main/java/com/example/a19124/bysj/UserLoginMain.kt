@@ -2,30 +2,44 @@ package com.example.a19124.bysj
 
 import android.app.Activity
 import android.content.Intent
-import android.graphics.drawable.Drawable
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import android.widget.Button
-import android.widget.ImageView
-import android.widget.TextView
+import android.widget.*
+import com.example.a19124.bysj.Utils.SecurityLoginUtils
+import com.kongzue.dialog.v2.WaitDialog
+
 //import androidx.appcompat.app.AppCompatActivity
 //import androidx.core.content.ContextCompat.startActivity
 
 
-class UserRegisterMain : AppCompatActivity() {
+class UserLoginMain : AppCompatActivity() {
+    lateinit var et_username:EditText
+    lateinit var et_password:EditText
 
     var name:String?="error"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.user_register_main)
-        val user_register=findViewById<Button>(R.id.button_register_ok)
-        user_register.setOnClickListener {
+        setContentView(R.layout.user_login_main)
+
+        et_username = findViewById(R.id.user_name)
+        et_password = findViewById(R.id.user_password)
+
+        showLoadingDialog()
+        checkLoginStatus()
+        val bt_user_login=findViewById<Button>(R.id.button_login_ok)
+        bt_user_login.setOnClickListener {
             //传回主码
             intent.putExtra("name","更换用户")
             setResult(Activity.RESULT_OK,intent)
-            val intent: Intent = Intent(this, MainActivity::class.java);
-            startActivity(intent);
+            var username = et_username.editableText.toString()
+            var password = et_password.editableText.toString()
+
+            if(SecurityLoginUtils.getInstance(this).login(username,password)) {
+                val intent: Intent = Intent(this, MainActivity::class.java);
+                startActivity(intent);
+            } else{
+                showToast("用户名或密码错误")
+            }
         }
         val imageView_register_main_fanhui=findViewById<ImageView>(R.id.imageView_register_main_fanhui)
         imageView_register_main_fanhui.setOnClickListener {
@@ -52,6 +66,21 @@ class UserRegisterMain : AppCompatActivity() {
                 finish()
             }
 
+        }
+    }
+    private fun showToast(msg:String) {
+        Toast.makeText(this,msg,Toast.LENGTH_SHORT).show()
+    }
+    private fun showLoadingDialog() {
+        WaitDialog.show(this,"载入中...")
+    }
+    private fun checkLoginStatus() {
+        if (SecurityLoginUtils.getInstance(this).loginStatus) {
+            WaitDialog.dismiss()
+            val intent: Intent = Intent(this, MainActivity::class.java);
+            startActivity(intent);
+        }else{
+            WaitDialog.dismiss()
         }
     }
 

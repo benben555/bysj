@@ -39,9 +39,9 @@
         <activity android:name=".User_plan" />
         <activity android:name=".Register_zhuce" />
         <activity android:name=".Chaci_sousuo" />
-        <activity android:name=".UserRegisterMain" />
+        <activity android:name=".MainActivity" />
         <activity android:name=".User_Register" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".UserLoginMain">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

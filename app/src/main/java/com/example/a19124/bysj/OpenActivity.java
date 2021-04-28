@@ -20,7 +20,7 @@ public class OpenActivity extends Activity{
         welcomeImg.startAnimation(anima);
         anima.setAnimationListener(new AnimationImpl());
         setTheme(R.style.AppTheme);
-        Intent intent = new Intent(this, UserRegisterMain.class);
+        Intent intent = new Intent(this, UserLoginMain.class);
         startActivity(intent);
     }
 
