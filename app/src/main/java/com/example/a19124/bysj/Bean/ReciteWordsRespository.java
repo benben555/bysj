@@ -1,5 +1,8 @@
 package com.example.a19124.bysj.Bean;
 
+import android.util.Log;
+import android.widget.Toast;
+
 import com.example.a19124.bysj.Utils.DBConnection;
 
 import java.util.LinkedList;
@@ -94,6 +97,18 @@ public class ReciteWordsRespository {
         while(!wordList.isEmpty() && wordQueue.size() < size) {
             wordQueue.offer(new WordBeanEx(2,wordList.poll()));
         }
+    }
+    /**
+     * 收藏单词
+     */
+    public void collectWord() {
+        Log.d("Collect","收藏 "+curWord.getWord().getWord());
+        try{
+            DBConnection.collectWord(curWord.getWord(),database);
+        }catch (InterruptedException e){
+            e.printStackTrace();
+        }
+
     }
 
 }

@@ -15,12 +15,12 @@
         <activity android:name=".More_change" />
         <activity android:name=".User_more" />
         <activity android:name=".User_zhenti" />
-        <activity android:name=".Shangcheng_xiadanfukuan" />
-        <activity android:name=".Shangcheng_shouye" />
+        <activity android:name=".shangcheng.Shangcheng_xiadanfukuan" />
+        <activity android:name=".shangcheng.Shangcheng_shouye" />
         <activity android:name=".Plan_switch" />
         <activity android:name=".User_xieyi" />
-        <activity android:name=".Shangcheng_xiaoxi" />
-        <activity android:name=".Shangcheng_dingdan" />
+        <activity android:name=".shangcheng.Shangcheng_xiaoxi" />
+        <activity android:name=".shangcheng.Shangcheng_dingdan" />
         <activity android:name=".Fuxi.Fuxi_xunlian" />
         <activity android:name=".Faxian.Faxian_wordTest" />
         <activity android:name=".Faxian.Faxian_read" />

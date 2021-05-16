@@ -77,6 +77,7 @@ class UserLoginMain : AppCompatActivity() {
     private fun checkLoginStatus() {
         if (SecurityLoginUtils.getInstance(this).loginStatus) {
             WaitDialog.dismiss()
+
             val intent: Intent = Intent(this, MainActivity::class.java);
             startActivity(intent);
         }else{

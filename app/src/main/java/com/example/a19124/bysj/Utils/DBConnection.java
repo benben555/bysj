@@ -2,6 +2,7 @@ package com.example.a19124.bysj.Utils;
 import android.content.Context;
 import android.util.Log;
 
+import com.example.a19124.bysj.Bean.UserInfo;
 import com.example.a19124.bysj.Bean.WordBean;
 
 import  java.sql.*;
@@ -184,7 +185,7 @@ public class DBConnection {
                         int flag = resultSet.getInt("bj");
                         WordBean wordBean = new WordBean(UID,word,msg,yinbiao,flag);
                         list.add(wordBean);
-                        Log.d(TAG, wordBean.toString());
+//                        Log.d(TAG, wordBean.toString());
                     }
 
                 }
@@ -209,8 +210,10 @@ public class DBConnection {
                     ResultSet resultSet = state.executeQuery(sql);
                     while(resultSet.next()){
                         flag[0] = true;
-
                         Log.d(TAG,"Login success");
+                        UserInfo.getInstance().setUsername(username);
+                        UserInfo.getInstance().setCoinOver(1000);
+
                     }
 
                 }
@@ -222,5 +225,64 @@ public class DBConnection {
         thread.start();
         thread.join();
         return flag[0];
+    }
+    public static void collectWord(final WordBean word,final String ciku) throws InterruptedException{
+        final UserInfo user = UserInfo.getInstance();
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                Statement state = null;
+                try {
+                    state = getConnection().createStatement();
+                    String sql = String.format("insert into shoucang(username,wordnumber,ciku) values('%s',%d,'%s');",user.getUsername(),word.getUID(),ciku);
+                    Log.d(TAG,sql);
+                    state.executeUpdate(sql);
+                    Log.d(TAG,"collect word"+word.getWord());
+
+                }
+                catch (SQLException throwables) {
+                    throwables.printStackTrace();
+                }
+            }
+        });
+        thread.start();
+        thread.join();
+    }
+    public static List<WordBean> getCollectWords(final String username, final String ciku) throws InterruptedException{
+        final List<WordBean> list = new ArrayList<>();
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                Statement state = null;
+                try {
+                    state = getConnection().createStatement();
+                    String sql = String.format("create or replace VIEW shoucangdanci \n" +
+                            "as\n" +
+                            "select *\n" +
+                            "from %s,shoucang\n" +
+                            "where %s.number = shoucang.wordnumber and shoucang.username = '%s';",ciku,ciku,username);
+                    state.executeUpdate(sql);
+                    String select = "select * from shoucangdanci;";
+                    ResultSet resultSet = state.executeQuery(select);
+                    while(resultSet.next()){
+                        String word = resultSet.getString("word");
+                        String msg = resultSet.getString("shiyi");
+                        String yinbiao = resultSet.getString("yinbiao");
+                        int UID = resultSet.getInt("number");
+                        int flag = resultSet.getInt("bj");
+                        WordBean wordBean = new WordBean(UID,word,msg,yinbiao,flag);
+                        list.add(wordBean);
+                        Log.d(TAG,"select collectedWord "+word);
+                    }
+
+                }
+                catch (SQLException throwables) {
+                    throwables.printStackTrace();
+                }
+            }
+        });
+        thread.start();
+        thread.join();
+        return list;
     }
 }

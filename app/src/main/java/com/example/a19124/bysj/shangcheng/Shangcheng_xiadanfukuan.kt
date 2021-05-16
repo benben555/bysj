@@ -1,8 +1,9 @@
-package com.example.a19124.bysj
+package com.example.a19124.bysj.shangcheng
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import com.example.a19124.bysj.R
 
 class Shangcheng_xiadanfukuan : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

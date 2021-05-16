@@ -5,6 +5,8 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 
+import com.example.a19124.bysj.Bean.UserInfo;
+
 /**
  * @author : Jason Zhang
  * @date : 2021/01/19
@@ -16,7 +18,8 @@ public class SecurityLoginUtils {
     private static SecurityLoginUtils INSTANCE = null;
 
 
-    private final String status = "STATUS";
+    private final String STATUS = "STATUS";
+    private final String USERNAME = "USERNAME";
     private SharedPreferences mSharedPreferences;
     private SharedPreferences.Editor mEditor;
 
@@ -42,15 +45,20 @@ public class SecurityLoginUtils {
         }catch (InterruptedException e) {
             e.printStackTrace();
         }
-        mEditor.putBoolean(status,true);
+        mEditor.putString(USERNAME,username);
+        mEditor.putBoolean(STATUS,flag);
         mEditor.apply();
         return flag;
     }
     public void logout() {
-        mEditor.putBoolean(status,false);
+        mEditor.putBoolean(STATUS,false);
         mEditor.apply();
     }
     public boolean getLoginStatus() {
-        return mSharedPreferences.getBoolean(status,false);
+        boolean status = mSharedPreferences.getBoolean(STATUS,false);
+        if(status){
+            UserInfo.getInstance().setUsername(mSharedPreferences.getString(USERNAME,"null"));
+        }
+        return status;
     }
 }

@@ -1,11 +1,12 @@
-package com.example.a19124.bysj
+package com.example.a19124.bysj.shangcheng
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import com.example.a19124.bysj.R
 
-class Shangcheng_xiaoxi : AppCompatActivity() {
+class Shangcheng_dingdan : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.shangcheng_xiaoxi)
+        setContentView(R.layout.shangcheng_dingdan)
     }
 }

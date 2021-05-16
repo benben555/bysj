@@ -3,15 +3,21 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
         <TextView
             android:background="#f5f5f5"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:text="商城"
             android:gravity="center"
             android:textColor="@android:color/holo_green_dark"
-            android:textSize="40dp">
+            android:textSize="30dp">
         </TextView>
+    </LinearLayout>
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"></TextView>
@@ -33,6 +39,7 @@
                 android:text="星币余额">
             </TextView>
             <TextView
+                android:id="@+id/tv_coin_over"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
@@ -62,10 +69,10 @@
                 android:orientation="horizontal"
                 >
                 <LinearLayout
+                    android:id="@+id/txhydh"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="8"
-                    android:id="@+id/linear_shangcheng_txsphy"
                     android:orientation="vertical">
 
                     <ImageView
@@ -95,10 +102,10 @@
                     android:layout_weight="0.1">
                 </TextView>
                 <LinearLayout
+                    android:id="@+id/xlxdh"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
-                    android:id="@+id/linear_shangcheng_xlx"
                     android:layout_weight="8">
 
                     <ImageView
@@ -131,10 +138,10 @@
                 android:orientation="horizontal"
                 >
                 <LinearLayout
+                    android:id="@+id/lzhydh"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:id="@+id/linear_shangcheng_lzhy"
                     android:orientation="vertical">
 
                     <ImageView
@@ -164,10 +171,10 @@
                     android:layout_weight="0.1">
                 </TextView>
                 <LinearLayout
+                    android:id="@+id/bdwpdh"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
-                    android:id="@+id/linear_shangcheng_bdwphy"
                     android:layout_weight="1">
 
                     <ImageView
@@ -191,75 +198,7 @@
                     </TextView>
                 </LinearLayout>
             </LinearLayout>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"></TextView>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                >
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:id="@+id/linear_shangcheng_aomanbook"
-                    android:orientation="vertical">
 
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="200dp"
-                        android:src="@drawable/aomanyupianjian">
-                    </ImageView>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:layout_weight="2"
-                        android:text="1800星币兑换/一本">
-                    </TextView>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="点击兑换"
-                        android:gravity="center"
-                        android:layout_weight="1">
-                    </TextView>
-                </LinearLayout>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:text="    "
-                    android:layout_weight="0.1">
-                </TextView>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:id="@+id/linear_shangcheng_jianaibook"
-                    android:layout_weight="1">
-
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="200dp"
-                        android:src="@drawable/jianai">
-                    </ImageView>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="2"
-                        android:gravity="center"
-                        android:text="1800星币兑换/一本">
-                    </TextView>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="点击兑换"
-                        android:gravity="center"
-                        android:layout_weight="1">
-                    </TextView>
-                </LinearLayout>
-            </LinearLayout>
         </LinearLayout>
     </ScrollView>
     <LinearLayout

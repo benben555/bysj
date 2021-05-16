@@ -29,7 +29,7 @@ class Navigation_User_Fragment : Fragment() {
         if (!SecurityLoginUtils.getInstance(getContext()).loginStatus) {
             register?.setText("注册/登录")
         } else {
-            register?.setText("已登录")
+            register?.setText("登出")
         }
         register?.setOnClickListener {
             if (name == "注册/登录") {
