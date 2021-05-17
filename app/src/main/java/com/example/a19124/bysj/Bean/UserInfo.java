@@ -1,5 +1,7 @@
 package com.example.a19124.bysj.Bean;
 
+import com.example.a19124.bysj.Utils.DBConnection;
+
 import java.util.List;
 
 /**
@@ -41,6 +43,25 @@ public class UserInfo {
 
     public void setCoinOver(int coinOver) {
         this.coinOver = coinOver;
+    }
+    public boolean makeOrder(String name) {
+        int productUID = 0;
+        int spend = 0;
+        switch (name) {
+            case "腾讯会员":productUID = 1;spend = 1000; break;
+            case "百度网盘":productUID = 2;spend = 1200;break;
+            case "绿钻会员":productUID = 3;spend = 800;break;
+            default:productUID =4 ;spend = 10000;
+        }
+        if(coinOver < spend) { return false; }
+        try{
+            DBConnection.buy(productUID);
+            DBConnection.subCoin(spend);
+            coinOver -= spend;
+        }catch (InterruptedException e){
+            e.printStackTrace();
+        }
+        return true;
     }
 
 }

@@ -7,6 +7,7 @@ import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 //import androidx.appcompat.app.AppCompatActivity
 import com.example.a19124.bysj.R
 import com.example.a19124.bysj.Bean.WordBean
@@ -52,6 +53,7 @@ class Fuxi_xunlian_beidanci : AppCompatActivity() {
         val button_collect = findViewById<FloatingActionButton>(R.id.ft_collect_word)
         button_collect.setOnClickListener{
             respository.collectWord()
+            Toast.makeText(this,"收藏成功",Toast.LENGTH_SHORT).show()
         }
 
     }

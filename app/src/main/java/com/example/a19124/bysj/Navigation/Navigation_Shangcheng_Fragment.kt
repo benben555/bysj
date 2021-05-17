@@ -11,6 +11,7 @@ import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
+import com.example.a19124.bysj.Bean.UserInfo
 import com.example.a19124.bysj.R
 import com.example.a19124.bysj.shangcheng.Shangcheng_dingdan
 import com.example.a19124.bysj.shangcheng.Shangcheng_xiadanfukuan
@@ -20,6 +21,7 @@ import com.kongzue.dialog.v2.SelectDialog
 
 class Navigation_Shangcheng_Fragment : Fragment() {
     lateinit var tv_coin_over:TextView
+    var user:UserInfo = UserInfo.getInstance()
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View?
     {
         val rootView: View = inflater.inflate(R.layout.navigation_shangcheng_fragment, container, false)
@@ -57,14 +59,25 @@ class Navigation_Shangcheng_Fragment : Fragment() {
             showConfirmDialog("行李箱",10000)
         }
         tv_coin_over = rootView.findViewById(R.id.tv_coin_over)
-        tv_coin_over.setText("1000")
+        tv_coin_over.setText(""+user.coinOver)
         return rootView
     }
     private fun showConfirmDialog(name: String, value: Int) {
 
         SelectDialog.show(context, "提示", String.format("请确认是否花费 %d 星币兑换 %s ", value, name),
-                "确定", { dialog, which -> Toast.makeText(context, "您点击了确定按钮", Toast.LENGTH_SHORT).show() },
+                "确定", { dialog, which ->
+                            Toast.makeText(context, String.format("已提交 %s",name), Toast.LENGTH_SHORT).show()
+                            makeOrder(name)
+                            },
                 "算了" ,{ dialog, which -> Toast.makeText(context, "您点击了取消按钮", Toast.LENGTH_SHORT).show() })
+
     }
+    private fun makeOrder(name:String){
+        if(!user.makeOrder(name)){
+            Toast.makeText(context,"星币余额不足",Toast.LENGTH_SHORT).show()
+        }
+        tv_coin_over.setText(""+user.coinOver)
+    }
+
 
 }

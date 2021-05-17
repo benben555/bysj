@@ -2,6 +2,7 @@ package com.example.a19124.bysj.Utils;
 import android.content.Context;
 import android.util.Log;
 
+import com.example.a19124.bysj.Bean.OrderBean;
 import com.example.a19124.bysj.Bean.UserInfo;
 import com.example.a19124.bysj.Bean.WordBean;
 
@@ -212,8 +213,7 @@ public class DBConnection {
                         flag[0] = true;
                         Log.d(TAG,"Login success");
                         UserInfo.getInstance().setUsername(username);
-                        UserInfo.getInstance().setCoinOver(1000);
-
+                        UserInfo.getInstance().setCoinOver(resultSet.getInt("coin"));
                     }
 
                 }
@@ -273,6 +273,80 @@ public class DBConnection {
                         WordBean wordBean = new WordBean(UID,word,msg,yinbiao,flag);
                         list.add(wordBean);
                         Log.d(TAG,"select collectedWord "+word);
+                    }
+
+                }
+                catch (SQLException throwables) {
+                    throwables.printStackTrace();
+                }
+            }
+        });
+        thread.start();
+        thread.join();
+        return list;
+    }
+
+
+    /**
+     * 商城订单
+     */
+    public static void buy(final int productId) throws InterruptedException{
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                Statement state = null;
+                try {
+                    state = getConnection().createStatement();
+                    String sql = String.format("insert into dingdan(username,shangping) values('%s',%d);",UserInfo.getInstance().getUsername(),productId);
+                    state.executeUpdate(sql);
+                    Log.d(TAG,"buy "+productId);
+
+                }
+                catch (SQLException throwables) {
+                    throwables.printStackTrace();
+                }
+            }
+        });
+        thread.start();
+        thread.join();
+    }
+
+    public static void subCoin(final int spend) throws InterruptedException{
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                Statement state = null;
+                try {
+                    state = getConnection().createStatement();
+                    String sql = String.format("update user set coin = coin-%d where username='%s';",spend,UserInfo.getInstance().getUsername());
+                    state.executeUpdate(sql);
+
+                }
+                catch (SQLException throwables) {
+                    throwables.printStackTrace();
+                }
+            }
+        });
+        thread.start();
+        thread.join();
+    }
+    public static List<OrderBean> getOrder(final String username) throws InterruptedException {
+        final List<OrderBean> list = new ArrayList<>();
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                Statement state = null;
+                try {
+                    state = getConnection().createStatement();
+                    String sql = String.format("select * from dingdan where username = '%s';",username);
+                    ResultSet resultSet = state.executeQuery(sql);
+                    while(resultSet.next()){
+
+                        int UID = resultSet.getInt("id");
+                        int flag = resultSet.getInt("shangping");
+                        OrderBean order = new OrderBean(UID,flag);
+                        list.add(order);
+                        Log.d(TAG,"select order "+UID + " "+flag);
                     }
 
                 }

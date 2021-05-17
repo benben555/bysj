@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import com.example.a19124.bysj.*
+import com.example.a19124.bysj.Bean.UserInfo
 import com.example.a19124.bysj.Utils.SecurityLoginUtils
 
 class Navigation_User_Fragment : Fragment() {
@@ -18,6 +19,7 @@ class Navigation_User_Fragment : Fragment() {
     var mTextView: TextView? = null
     var name: String? = "注册/登录"
     var rootView: View? = null
+    var user:UserInfo = UserInfo.getInstance()
 
     override fun onCreateView(
             inflater: LayoutInflater,
@@ -43,6 +45,8 @@ class Navigation_User_Fragment : Fragment() {
             }
 
         }
+        val tv_user_coin_over = rootView?.findViewById<TextView>(R.id.tv_coin_over_user)
+        tv_user_coin_over?.setText(""+user.coinOver)
         val button_user_exit=rootView?.findViewById<Button>(R.id.button_user_exit)
         button_user_exit?.setOnClickListener {
            activity?.finish()

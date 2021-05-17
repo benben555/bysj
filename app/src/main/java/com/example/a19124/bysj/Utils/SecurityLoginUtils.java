@@ -20,6 +20,7 @@ public class SecurityLoginUtils {
 
     private final String STATUS = "STATUS";
     private final String USERNAME = "USERNAME";
+    private final String COIN = "COIN";
     private SharedPreferences mSharedPreferences;
     private SharedPreferences.Editor mEditor;
 
@@ -47,6 +48,7 @@ public class SecurityLoginUtils {
         }
         mEditor.putString(USERNAME,username);
         mEditor.putBoolean(STATUS,flag);
+        mEditor.putInt(COIN,UserInfo.getInstance().getCoinOver());
         mEditor.apply();
         return flag;
     }
@@ -58,6 +60,7 @@ public class SecurityLoginUtils {
         boolean status = mSharedPreferences.getBoolean(STATUS,false);
         if(status){
             UserInfo.getInstance().setUsername(mSharedPreferences.getString(USERNAME,"null"));
+            UserInfo.getInstance().setCoinOver(mSharedPreferences.getInt(COIN,0));
         }
         return status;
     }
