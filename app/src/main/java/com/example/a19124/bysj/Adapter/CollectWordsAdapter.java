@@ -13,12 +13,6 @@ import com.example.a19124.bysj.R;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * @author : Jason Zhang
- * @date : 2021/01/19
- * version: 2.0
- * Description:
- */
 public class CollectWordsAdapter extends RecyclerView.Adapter<CollectWordsAdapter.VH>{
     private List<WordBean> list = new ArrayList<>();
     static class VH extends RecyclerView.ViewHolder {

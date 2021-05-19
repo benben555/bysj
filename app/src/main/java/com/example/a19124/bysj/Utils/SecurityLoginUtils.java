@@ -7,20 +7,14 @@ import android.preference.PreferenceManager;
 
 import com.example.a19124.bysj.Bean.UserInfo;
 
-/**
- * @author : Jason Zhang
- * @date : 2021/01/19
- * version: 2.0
- * Description:
- */
 public class SecurityLoginUtils {
 
     private static SecurityLoginUtils INSTANCE = null;
-
-
     private final String STATUS = "STATUS";
     private final String USERNAME = "USERNAME";
     private final String COIN = "COIN";
+    private final String CIHUILIANG="CIHUILIANG";
+    private final String BJ = "BJ";
     private SharedPreferences mSharedPreferences;
     private SharedPreferences.Editor mEditor;
 
@@ -49,6 +43,8 @@ public class SecurityLoginUtils {
         mEditor.putString(USERNAME,username);
         mEditor.putBoolean(STATUS,flag);
         mEditor.putInt(COIN,UserInfo.getInstance().getCoinOver());
+        mEditor.putInt(CIHUILIANG,UserInfo.getInstance().getCihuiliang());
+        mEditor.putInt(BJ,UserInfo.getInstance().getBj());
         mEditor.apply();
         return flag;
     }
@@ -60,7 +56,9 @@ public class SecurityLoginUtils {
         boolean status = mSharedPreferences.getBoolean(STATUS,false);
         if(status){
             UserInfo.getInstance().setUsername(mSharedPreferences.getString(USERNAME,"null"));
-            UserInfo.getInstance().setCoinOver(mSharedPreferences.getInt(COIN,0));
+            UserInfo.getInstance().setCoinOver(mSharedPreferences.getInt(COIN,100000));
+            UserInfo.getInstance().setCihuiliang(mSharedPreferences.getInt(CIHUILIANG,0));
+            UserInfo.getInstance().setBj(mSharedPreferences.getInt(BJ,3));
         }
         return status;
     }

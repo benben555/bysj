@@ -66,16 +66,17 @@ class Navigation_Shangcheng_Fragment : Fragment() {
 
         SelectDialog.show(context, "提示", String.format("请确认是否花费 %d 星币兑换 %s ", value, name),
                 "确定", { dialog, which ->
-                            Toast.makeText(context, String.format("已提交 %s",name), Toast.LENGTH_SHORT).show()
                             makeOrder(name)
                             },
                 "算了" ,{ dialog, which -> Toast.makeText(context, "您点击了取消按钮", Toast.LENGTH_SHORT).show() })
-
     }
     private fun makeOrder(name:String){
         if(!user.makeOrder(name)){
             Toast.makeText(context,"星币余额不足",Toast.LENGTH_SHORT).show()
+            return
         }
+        Toast.makeText(context, String.format("已提交 %s",name), Toast.LENGTH_SHORT).show()
+        user.addcoin(5)
         tv_coin_over.setText(""+user.coinOver)
     }
 

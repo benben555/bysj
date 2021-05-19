@@ -12,12 +12,14 @@ import android.widget.Toast
 import com.example.a19124.bysj.R
 import com.example.a19124.bysj.Bean.WordBean
 import com.example.a19124.bysj.Bean.ReciteWordsRespository
+import com.example.a19124.bysj.Bean.UserInfo
 
 class Fuxi_xunlian_beidanci : AppCompatActivity() {
     var str:String?="null"
-
+    //拿到用户的单例
+    var user:UserInfo=UserInfo.getInstance()
     //拿到仓库类的单例
-    var respository: ReciteWordsRespository = ReciteWordsRespository.getInstance("siji")
+    var respository: ReciteWordsRespository = ReciteWordsRespository.getInstance(user.database)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,6 +46,8 @@ class Fuxi_xunlian_beidanci : AppCompatActivity() {
         }
         val button_beidanci_renshi=findViewById<Button>(R.id.button_beidanci_renshi)
         button_beidanci_renshi.setOnClickListener {
+            user.addcoin(1)
+            user.addcihui()
             respository.changeRate(ReciteWordsRespository.RECOGNIZED)
             if(respository.remeberedAll()){
                 finish()

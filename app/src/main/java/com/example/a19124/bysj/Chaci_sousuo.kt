@@ -9,6 +9,7 @@ import android.view.View
 import android.view.inputmethod.EditorInfo
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import com.example.a19124.bysj.Utils.DBConnection
 
 class Chaci_sousuo : AppCompatActivity() {
@@ -24,8 +25,13 @@ class Chaci_sousuo : AppCompatActivity() {
             val messageText:String=messageView.getText().toString();
             val intent: Intent = Intent(this,Sousuo_xianshi::class.java);
             val msg = DBConnection.findWord(messageText)
-            intent.putExtra(EXTRA_MESSAGE,msg);
-            startActivity(intent);
+            if(msg!=null) {
+                intent.putExtra(EXTRA_MESSAGE, msg);
+                startActivity(intent);
+                //Toast.makeText(this,msg,Toast.LENGTH_SHORT).show()
+            }
+            else
+                Toast.makeText(this,"没有找到此单词",Toast.LENGTH_SHORT).show()
         }
 
         val message=findViewById<EditText>(R.id.message)
@@ -39,10 +45,13 @@ class Chaci_sousuo : AppCompatActivity() {
                 messageText+=' '
                 val intent: Intent = Intent(this,Sousuo_xianshi::class.java);
                 val msg = DBConnection.findWord(messageText)
-                intent.putExtra(EXTRA_MESSAGE,msg);
+                if(msg!=null) {
+                    intent.putExtra(EXTRA_MESSAGE, msg);
 
-                startActivity(intent);
-
+                    startActivity(intent);
+                }
+                else
+                    Toast.makeText(this,"没有找到此单词",Toast.LENGTH_SHORT).show()
                 true
             } else false
         })

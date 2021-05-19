@@ -7,12 +7,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
-/**
- * @author : Jason Zhang
- * @date : 2021/01/19
- * version: 2.0
- * Description:
- */
 public class TestWordsRespository {
     private static TestWordsRespository INSTANCE = null;
 

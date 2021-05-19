@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Plan_switchday"></activity>
+        <activity android:name=".Beidanci_finish"></activity>
+        <activity android:name=".Plan_switchday" />
         <activity android:name=".More_daka" />
         <activity android:name=".More_sousuo" />
         <activity android:name=".More_change" />

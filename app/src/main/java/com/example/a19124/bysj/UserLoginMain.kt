@@ -36,6 +36,7 @@ class UserLoginMain : AppCompatActivity() {
 
             if(SecurityLoginUtils.getInstance(this).login(username,password)) {
                 val intent: Intent = Intent(this, MainActivity::class.java);
+                intent.putExtra("user_name",username)
                 startActivity(intent);
             } else{
                 showToast("用户名或密码错误")

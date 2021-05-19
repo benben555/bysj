@@ -58,6 +58,7 @@
 
                 </Button>
                 <TextView
+                    android:id="@+id/tv_cihuiliang_user"
                     android:layout_weight="2"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
@@ -126,13 +127,13 @@
                 android:layout_height="0dp"
                 android:text="帮助或反馈"
                 />
-            <Button
-                android:layout_weight="1"
-                android:id="@+id/button_user_more"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:text="更多"
-                />
+<!--            <Button-->
+<!--                android:layout_weight="1"-->
+<!--                android:id="@+id/button_user_more"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="0dp"-->
+<!--                android:text="更多"-->
+<!--                />-->
             <Button
                 android:layout_weight="1"
                 android:id="@+id/button_user_exit"

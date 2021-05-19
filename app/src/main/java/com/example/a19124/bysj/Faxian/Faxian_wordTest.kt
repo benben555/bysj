@@ -6,6 +6,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import com.example.a19124.bysj.Bean.TestWordsRespository
+import com.example.a19124.bysj.Bean.UserInfo
 import com.example.a19124.bysj.Bean.WordBean
 import com.example.a19124.bysj.R
 import java.util.*
@@ -24,7 +25,7 @@ class Faxian_wordTest : AppCompatActivity(),View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.faxian_wordtest)
-        respository = TestWordsRespository.getInstance("siji")
+        respository = TestWordsRespository.getInstance(UserInfo.getInstance().database)
         init()
         setWord()
     }

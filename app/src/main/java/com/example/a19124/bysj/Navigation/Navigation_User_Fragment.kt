@@ -47,6 +47,8 @@ class Navigation_User_Fragment : Fragment() {
         }
         val tv_user_coin_over = rootView?.findViewById<TextView>(R.id.tv_coin_over_user)
         tv_user_coin_over?.setText(""+user.coinOver)
+        val tv_cihuiliang_user = rootView?.findViewById<TextView>(R.id.tv_cihuiliang_user)
+        tv_cihuiliang_user?.setText(""+user.cihuiliang)
         val button_user_exit=rootView?.findViewById<Button>(R.id.button_user_exit)
         button_user_exit?.setOnClickListener {
            activity?.finish()
@@ -86,11 +88,11 @@ class Navigation_User_Fragment : Fragment() {
             val intent: Intent = Intent(activity, User_guanyu::class.java);
             startActivity(intent);
         }
-        val button_user_more=rootView?.findViewById<Button>(R.id.button_user_more)
-        button_user_more?.setOnClickListener {
-            val intent: Intent = Intent(activity, User_more::class.java);
-            startActivity(intent);
-        }
+//        val button_user_more=rootView?.findViewById<Button>(R.id.button_user_more)
+//        button_user_more?.setOnClickListener {
+//            val intent: Intent = Intent(activity, User_more::class.java);
+//            startActivity(intent);
+//        }
 
 
 

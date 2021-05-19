@@ -145,34 +145,17 @@
                     android:orientation="vertical"
                     android:layout_weight="2"
                     >
+
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="2"
-                        android:gravity="center"
-                        android:text="学习小班">
-                    </TextView>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="一起结伴背单词"
+                        android:text=""
                         android:gravity="center"
                         android:layout_weight="1">
                     </TextView>
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="200dp"
-                        android:src="@drawable/xuexixiaozu">
-                    </ImageView>
+
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
-
-
-    <!--    <RelativeLayout-->
-    <!--        android:id="@+id/discuss_1"-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="match_parent">-->
-    <!--    </RelativeLayout>-->
 </LinearLayout>

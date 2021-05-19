@@ -4,6 +4,7 @@ import android.util.Log;
 
 import com.example.a19124.bysj.Bean.OrderBean;
 import com.example.a19124.bysj.Bean.UserInfo;
+import com.example.a19124.bysj.Bean.WenzhangBean;
 import com.example.a19124.bysj.Bean.WordBean;
 
 import  java.sql.*;
@@ -103,6 +104,65 @@ public class DBConnection {
         return wordBean[0].toString();
     }
 
+    public static void register(final String username,final String password,final String mobile,final String email,final String sex) throws InterruptedException {
+        final Connection conn = getConnection();
+        final WordBean[] wordBean = new WordBean[1];
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                Statement state = null;
+                try {
+                    state = getConnection().createStatement();
+                    //String sql = "select * from '"+Plan_switch.bj+"' where word = '"+ word + "';";
+                    String sql = "insert into user values( '"+ username + "','"+ password +"', 3 ,'"+ mobile +"','"+ email +"',0,'"+ sex +"',0,0);";
+                    state.executeUpdate(sql);
+
+                } catch (SQLException throwables) {
+                    throwables.printStackTrace();
+                }
+
+            }
+        });
+        thread.start();
+        thread.join();
+    }
+
+    public static String getUserInfo(final String user_name) throws InterruptedException {
+        final Connection conn = getConnection();
+        final UserInfo[] UserInfo = new UserInfo[1];
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                Statement state = null;
+                try {
+                    state = getConnection().createStatement();
+                    //String sql = "select * from '"+Plan_switch.bj+"' where word = '"+ username + "';";
+                    String sql = "select * from user where username = '"+ user_name + "';";
+                    ResultSet resultSet = state.executeQuery(sql);
+                    while(resultSet.next()){
+                        String username = resultSet.getString("username");
+                        String password = resultSet.getString("password");
+                        int bj = resultSet.getInt("bj");
+                        String mobile = resultSet.getString("mobile");
+                        String email = resultSet.getString("email");
+                        int cihuiliang = resultSet.getInt("cihuiliang");
+                        String sex = resultSet.getString("sex");
+                        int coinOver = resultSet.getInt("coinOver");
+                        UserInfo[0] = new UserInfo(username,password,bj,mobile,email,cihuiliang,sex,coinOver);
+                        Log.d(TAG, UserInfo[0].toString());
+                    }
+
+                } catch (SQLException throwables) {
+                    throwables.printStackTrace();
+                }
+
+            }
+        });
+        thread.start();
+        thread.join();
+        return UserInfo[0].toString();
+    }
+
     public static int getWordnum(final String sjk) throws InterruptedException {
         final int[] flag = {0};
         final Connection conn = getConnection();
@@ -128,7 +188,70 @@ public class DBConnection {
         return flag[0];
     }
 
+    public static String dWord(final String word) throws InterruptedException {
+        final Connection conn = getConnection();
+        // final WordBean[] wordBean = new WordBean[1];
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                Statement state = null;
+                try {
+                    state = getConnection().createStatement();
+                    //String sql = "select * from '"+Plan_switch.bj+"' where word = '"+ word + "';";
+                    String sql = "select * from siji where word like '"+ word + "';";
+                    ResultSet resultSet = state.executeQuery(sql);
+                    while(resultSet.next()){
+                        String word = resultSet.getString("word");
+                        String msg = resultSet.getString("shiyi");
+                        String yinbiao = resultSet.getString("yinbiao");
+                        int UID = resultSet.getInt("number");
+                        int flag = resultSet.getInt("bj");
+                        // wordBean[0] = new WordBean(UID,word,msg,yinbiao,flag);
+                        // Log.d(TAG, wordBean[0].toString());
+                    }
 
+                } catch (SQLException throwables) {
+                    throwables.printStackTrace();
+                }
+
+            }
+        });
+        thread.start();
+        thread.join();
+        // return wordBean[0].toString();
+        return word;
+    }
+
+    public static String wenzhang(final int number) throws InterruptedException {
+        final Connection conn = getConnection();
+        final WenzhangBean[] wenzhang=new WenzhangBean[1];
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                Statement state = null;
+                try {
+                    state = getConnection().createStatement();
+                    String sql = "select * from wenzhang where number = '"+ number + "';";
+                    ResultSet resultSet = state.executeQuery(sql);
+                    while(resultSet.next()){
+                        int cihuiliang = resultSet.getInt("cihuiliang");
+                        int number = resultSet.getInt("number");
+                        String title = resultSet.getString("title");
+                        String text = resultSet.getString("text");
+                        wenzhang[0] = new WenzhangBean(cihuiliang,number,title,text);
+                    }
+
+                } catch (SQLException throwables) {
+                    throwables.printStackTrace();
+                }
+
+            }
+        });
+        thread.start();
+        thread.join();
+        // return wordBean[0].toString();
+        return wenzhang[0].toString();
+    }
 
     public static String getWord(final String sjk) throws InterruptedException {
     final Connection conn = getConnection();
@@ -210,10 +333,13 @@ public class DBConnection {
                     String sql = "select * from user where username='"+username+"' and password='"+pwd+"'";
                     ResultSet resultSet = state.executeQuery(sql);
                     while(resultSet.next()){
+                        //登录成功后执行
+                        //初始化用户的数据
                         flag[0] = true;
                         Log.d(TAG,"Login success");
                         UserInfo.getInstance().setUsername(username);
                         UserInfo.getInstance().setCoinOver(resultSet.getInt("coin"));
+                        UserInfo.getInstance().setBj(resultSet.getInt("bj"));
                     }
 
                 }

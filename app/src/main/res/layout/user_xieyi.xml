@@ -8,7 +8,8 @@
     android:orientation="vertical">
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="0.5"
         android:background="#f5f5f5"
         >
 
@@ -25,45 +26,46 @@
         </TextView>
 
     </LinearLayout>
-<ScrollView
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
     <TextView
-    android:layout_weight="3"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:singleLine="false"
-    android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.5"
+        android:gravity="center"
+        android:text="         ">
+    </TextView>
 
-    android:text="软件最终用户许可协议\n
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="10">
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:singleLine="false"
+            android:text="
+            软件最终用户许可协议\n
 重要须知━请认真阅读：本《最终用户许可协议》（以下称《协议》）是您（单一实体）与 系统之间有关上述系统软件产品的法律协议。\n
 本“软件产品”包括计算机软件，并可能包括相关媒体、印刷材料和“联机”或电子文档（“软件产品”）。
 本“软件产品”还包括对系统提供给您的原“软件产品”的任何更新和补充资料。
 任何与本“软件产品”一同提供给您的并与单独一份最终用户许可证相关的软件产品是根据那份许可协议中的条款而授予您。
 您一旦安装、复制、下载、访问或以其它方式使用“软件产品”，即表示您同意接受本《协议》各项条款的约束。
 如您不同意本《协议》中的条款，请不要安装或使用“软件产品”；但您可将其退回原购买处，并获得全额退款。\n
-
 软件产品许可证\n
-
 本“软件产品”受袒护著作权法及国际著作权条约和其它知识产权法和条约的保护。本“软件产品”只许可使用，而不出售。\n
-
 1．许可证的授予。本《协议》授予您下列权利：应用软件。
 您可在单一一台计算机上安装、使用、访问、显示、运行或以其它方式互相作用于（“运行”）本“软件产品” （或适用于同一操作系统的任何前版本）的一份副本。
 运行“软件产品”的计算机的主要用户可以制作另一份副本，仅供在其在安装到公司其他电脑管理注册后的同一项目之用储存／网络用途。
 您还可以在您公司的其它计算机上运行“软件产品”但仅限于注册时所添之项目，您必须为增加的每个项目获得一份许可证。\n
 
 ．保留权利。未明示授予的一切其它权利均为本人所有。\n
-
 2．其它权利和限制的说明。\n
 ．试用版本。仅限于试用，如需正式使用，必须注册成为正式版。\n
-
 ．组件的分隔。本“软件产品”是作为单一产品而被授予使用许可的。您不得将
 其组成部分分开在多台计算机上使用。\n
-
 ．商标。本《协议》不授予您有关任何xxx系统商标或服务商标的任何权利。\n
 ．出租。不得出租、租赁或出借本“软件产品”。\n
-
 ．支持服务。本人可能为您提供与“软件产品”有关的支持服务（“支持服务”）。
 支持服务的使用受用户手册、“联机”文档和/或其它提供的材料中所述的各项政策和计划的制约。
 提供给您作为支持服务的一部份的任何附加软件代码应被视为本“软件产品”的一部分，并须符合本《协议》中的各项条款和条件。
@@ -95,8 +97,7 @@
 
 本《协议》受中华人民共和国法律管辖。\n
 
-如果您对本《协议》有什么问题，请同 本人 联系，或写信给191243555@qq.com。\n">
-</TextView>
-</ScrollView>
+如果您对本《协议》有什么问题，请同 本人 联系，或写信给191243555@qq.com。\n"></TextView>
+    </ScrollView>
 
 </LinearLayout>

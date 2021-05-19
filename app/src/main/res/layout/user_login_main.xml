@@ -57,6 +57,7 @@
                     android:text=" 用户名"
                     android:textColor="#cc6666"/>
                 <EditText
+                    android:singleLine="true"
                     android:id="@+id/user_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
@@ -73,6 +74,7 @@
                     android:text=" 密码"
                     android:textColor="#cc6666"/>
                 <EditText
+                    android:singleLine="true"
                     android:id="@+id/user_password"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
@@ -89,11 +91,11 @@
                 android:layout_height="wrap_content"
 
                 android:orientation="horizontal">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:text="忘记密码?"/>
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_alignParentLeft="true"-->
+<!--                    android:text="忘记密码?"/>-->
                 <TextView
                     android:id="@+id/textview_3"
                     android:layout_width="wrap_content"

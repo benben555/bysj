@@ -4,16 +4,16 @@ import com.example.a19124.bysj.Utils.DBConnection;
 
 import java.util.List;
 
-/**
- * @author : Jason Zhang
- * @date : 2021/01/19
- * version: 2.0
- * Description:
- */
 public class UserInfo {
     private static UserInfo INSTANCE = null;
     private String username;
-    private int coinOver;
+    private int coinOver=100000;
+    private int bj;
+    private int cihuiliang;
+    private String password;
+    private String mobile;
+    private String email;
+    private String sex;
 
     private UserInfo() {
 
@@ -29,6 +29,12 @@ public class UserInfo {
         return INSTANCE;
     }
 
+//    public int getcihuiliang(){return cihuiliang;}
+//
+//    public void setCihuiliang(int cihuiliang) {this.cihuiliang=cihuiliang;}
+
+    public int getbj(){return bj;}
+
     public String getUsername() {
         return username;
     }
@@ -37,6 +43,10 @@ public class UserInfo {
         this.username = username;
     }
 
+    public void addcoin(int i){this.coinOver+=i;}
+
+    public void addcihui(){this.cihuiliang++;}
+
     public int getCoinOver() {
         return coinOver;
     }
@@ -44,6 +54,15 @@ public class UserInfo {
     public void setCoinOver(int coinOver) {
         this.coinOver = coinOver;
     }
+
+    public void setCihuiliang(int cihuiliang) {
+        this.cihuiliang = cihuiliang;
+    }
+
+    public int getCihuiliang() {
+        return cihuiliang;
+    }
+
     public boolean makeOrder(String name) {
         int productUID = 0;
         int spend = 0;
@@ -64,4 +83,83 @@ public class UserInfo {
         return true;
     }
 
+    public  UserInfo(String username,String password,int bj,String mobile,String email,int cihuiliang,String sex,int coinOver){
+        this.coinOver=coinOver;
+        this.password=password;
+        this.bj=bj;
+        this.mobile=mobile;
+        this.email=email;
+        this.cihuiliang=cihuiliang;
+        this.sex=sex;
+        this.coinOver=coinOver;
+    }
+
+
+    public int getBj() {
+        return bj;
+    }
+
+    public void setBj(int bj) {
+        this.bj = bj;
+    }
+
+    public String getDatabase() {
+        String database = null;
+        switch (bj){
+            case 3:database = "gaokao";break;
+            case 4:database = "siji";break;
+            case 6:database = "liuji";break;
+            case 8:database = "kaoyan";break;
+            default:
+        }
+        return database;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getMobile() {
+        return mobile;
+    }
+
+    public void setMobile(String mobile) {
+        this.mobile = mobile;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
+
+    public UserInfo(String str){
+        String[] params = str.split(";");
+        this.username = params[0];
+        this.password  = params[1];
+        this.bj = Integer.parseInt(params[2]);
+        this.mobile = params[3];
+        this.email= params[4];
+        this.cihuiliang = Integer.parseInt(params[5]);
+        this.sex= params[6];
+        this.coinOver = Integer.parseInt(params[7]);
+    }
+
+    public String toString() {
+        return username+";"+password+";"+bj+";"+mobile+";"+email+";"+cihuiliang+";"+sex+";"+coinOver;
+    }
 }

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:context=".Beidanci_finish"
     android:orientation="vertical">
     <LinearLayout
         android:layout_width="match_parent"
@@ -15,23 +16,21 @@
             android:layout_width="50dp"
             android:layout_height="39dp"
             android:src="@drawable/fanhui"
+
             android:onClick="fanhui"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="历年真题资料          ">
-        </TextView>
+        <!--        <TextView-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="match_parent"-->
+        <!--            android:gravity="center"-->
+
+        <!--            android:text="爱阅读           "></TextView>-->
 
     </LinearLayout>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:text="链接：https://pan.baidu.com/s/1qZz7b3sidGSuodY1ku1V9w\n
-提取码：eo6e\n
-复制这段内容后打开百度网盘手机App，操作更方便哦\n"
-        >
-    </TextView>
+        android:textSize="40dp"
+        android:text="恭喜您已经完成了今天的背单词计划！"></TextView>
 
 </LinearLayout>
