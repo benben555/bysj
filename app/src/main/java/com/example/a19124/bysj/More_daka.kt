@@ -11,19 +11,6 @@ import android.widget.Toast
 import java.text.SimpleDateFormat
 import java.util.*
 
-//class More_daka : AppCompatActivity() {
-//    override fun onCreate(savedInstanceState: Bundle?) {
-//        super.onCreate(savedInstanceState)
-//        setContentView(R.layout.more_daka)
-//    }
-//}
-
-
-/**
- * 本月日历
- *
- * @author aiyang
- */
 class More_daka : AppCompatActivity(), AdapterView.OnItemClickListener {
     private var registration_calendar_gv: GridView? = null
     private var today: TextView? = null

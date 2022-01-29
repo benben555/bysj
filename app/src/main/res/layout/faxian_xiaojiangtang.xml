@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Faxian_xiaojiangtang"
+    tools:context=".Faxian.Faxian_xiaojiangtang"
     android:orientation="vertical">
     <LinearLayout
         android:layout_width="match_parent"
@@ -38,10 +38,11 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_weight="1">
-            <TextView
+                <TextView
                 android:singleLine="false"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="@color/blue"
                 android:text="注意： 当有though, although时，后面的从句不能有but，但是 though 和yet可连用\n
 
 　　Although it‘s raining, they are still working in the field.\n
@@ -55,7 +56,11 @@
 　　Though the sore be healed, yet a scar may remain.\n
 
 　　伤口虽愈合，但伤疤留下了。 (谚语)"></TextView>
-            <TextView
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=" "></TextView>
+                <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="典型例题\n
@@ -73,17 +78,15 @@
 　　Child as /though he was, he knew what was the right thing to do.\n
 
 　　= Though he was a small child, he knew what was the right thing to do."></TextView>
-        </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_weight="1">
                 <TextView
-                    android:singleLine="false"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="地点状语从句备考知识点\n
+                    android:text=" "></TextView>
+                <TextView
+                        android:textColor="@color/colorPrimary"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="地点状语从句备考知识点\n
 
 　　地点状语从句从字面上来看，是一个句子做地点状语成分，表示地点、方位，
 通常由where、wherever(no matter where)、anywhere、everywhere引导。
@@ -101,22 +104,85 @@ Where引导地点状语从句时，where是从属连词，句子修饰的是主�
 　　Keep it where you can see it.\n
 
 　　把它放在你能看得见的地方。">
+                    </TextView>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=" "></TextView>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/blue"
+                    android:text="1.as...as...引导的比较级：(1)“as +形容词或副词原级+as+被比较对象”结构。例句： He studies as hard as you. 他像你一样学习努力。
+
+　　(2)在否定句或疑问句中可用 not so…as…. 例句：He can notrun so/as fast as you. 他没你跑得快。">
                 </TextView>
-            </LinearLayout>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=" "></TextView>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/red"
+                    android:text="2.only引导的倒装句型：only +状语 (或状语从句)位于句首时，句子部分倒装。
+
+　　例句： Only by diligence and honesty can one succeed inlife. 只有勤奋、正直，一个人在生活中才能成功。
+
+　　注意：但 only修饰主语时，不倒装。例句： Onlythat girl knew how to work out the problem. 只有那位女生知道怎样解那道题。">
+                </TextView>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=" "></TextView>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:text="3.wish引导的虚拟语气：wish 后面的从句，当表示与事实相反的情况，或表示将来不太可能实现的愿望时，其宾语从句的动词形式为：
+
+　　⑴表示对现在情况的虚拟：从句动词用过去式或过去进行式表示，be 的过去式用were.
+
+　　I wish I knew the answer to the question. 我希望知道这个问题的答案。(可惜不知道。)
+
+　　⑵表示对过去情况的虚拟：从句动词用had +过去分词。
+
+　　I wish (that) I hadn’t wastedso much time. 我后悔不该浪费这么多时间。( 实际上已经浪费掉了。)
+
+　　⑶表示对将来的主观愿望：谓语动词形式为“would/ should/ could/ might +动词原形”。在这种情况下，主句的主语与从句的主语不能相同，因为主句的主语所期望的从句动作能否实现，取决于从句主语的态度或意愿(非动作名词除外) 。
+
+　　I wish it would stop raining. 但愿雨能停止。
+
+　　注意：若wish 后的宾语从句中用 would，可以表示请求，通常意味着说话人的不快或不满。
+
+　　例句：I wish you would be quiet. 我希望你安静一些。">
+                </TextView>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=" "></TextView>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/blue"
+                    android:text="4.it形式宾语：和it 作形式主语一样, 我们常用it 来作形式宾语, 把真正的宾语从句放在句末, 这种情况尤其出现在带复合宾语的句子中。
+
+　　例句：He has made it clear that he will not give in. 他表明他不会屈服。">
+                </TextView>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=" "></TextView>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorPrimary"
+                    android:text="5.The+比较级，the+比较级表示“越......越......”。
+
+　　例句：The more scared we are, the stronger the difficultywill become.我们越害怕困难，困难就会变得越强大。">
+                </TextView>
+        </LinearLayout>
+
         </LinearLayout>
     </ScrollView>
-<!--    <LinearLayout-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:orientation="vertical"-->
-<!--        android:layout_weight="1">-->
-
-
-<!--        <TextView-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:gravity="center"-->
-<!--            android:text="200星币兑换"></TextView>-->
-<!--    </LinearLayout>-->
-
 </LinearLayout>

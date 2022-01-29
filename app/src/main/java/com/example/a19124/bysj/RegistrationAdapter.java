@@ -8,11 +8,6 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-/**
- *  日历 适配器
- * Created by aiyang on 2017/4/14.
- */
-
 public class RegistrationAdapter extends BaseAdapter {
     private Context context;
     private final int days;

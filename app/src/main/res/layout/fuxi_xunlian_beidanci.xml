@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Fuxi_xunlian_beidanci">
+    tools:context=".Fuxi.Fuxi_xunlian_beidanci">
     <ImageView
         android:layout_width="50dp"
         android:layout_height="39dp"
@@ -15,15 +15,17 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        >
+        android:orientation="horizontal">
         <TextView
+            android:layout_weight="3"
             android:id="@+id/textview_beidanci_word"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
             android:text="twinkle"
             android:textSize="45dp">
         </TextView>
+
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -127,7 +129,13 @@
             android:text="the incident was over in a twinkle"
             android:textSize="20dp">
         </TextView>
-
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/ft_collect_word"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginEnd="5dp"
+            />
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -162,5 +170,6 @@
         </Button>
 
     </LinearLayout>
+
 
 </LinearLayout>

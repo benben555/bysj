@@ -9,9 +9,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
-import android.widget.Toast
 import com.example.a19124.bysj.*
-import kotlinx.android.synthetic.main.listitem_xiaozu.*
+import com.example.a19124.bysj.Bean.UserInfo
+import com.example.a19124.bysj.Utils.SecurityLoginUtils
 
 class Navigation_User_Fragment : Fragment() {
 
@@ -19,6 +19,7 @@ class Navigation_User_Fragment : Fragment() {
     var mTextView: TextView? = null
     var name: String? = "注册/登录"
     var rootView: View? = null
+    var user:UserInfo = UserInfo.getInstance()
 
     override fun onCreateView(
             inflater: LayoutInflater,
@@ -27,14 +28,15 @@ class Navigation_User_Fragment : Fragment() {
     ): View? {
         rootView = inflater.inflate(R.layout.navigation_user_fragment, container, false)
         val register=rootView?.findViewById<Button>(R.id.button_user_register)
-        if (name == "注册/登录") {
+        if (!SecurityLoginUtils.getInstance(getContext()).loginStatus) {
             register?.setText("注册/登录")
         } else {
-            register?.setText("已登录")
+            register?.setText("登出")
         }
         register?.setOnClickListener {
             if (name == "注册/登录") {
-                val intent = Intent(activity, UserRegisterMain::class.java)
+                SecurityLoginUtils.getInstance(getContext()).logout()
+                val intent = Intent(activity, UserLoginMain::class.java)
                 startActivityForResult(intent, 1)
             } else {
                 val intent = Intent(activity, UserReplaceMessage::class.java)
@@ -43,6 +45,10 @@ class Navigation_User_Fragment : Fragment() {
             }
 
         }
+        val tv_user_coin_over = rootView?.findViewById<TextView>(R.id.tv_coin_over_user)
+        tv_user_coin_over?.setText(""+user.coinOver)
+        val tv_cihuiliang_user = rootView?.findViewById<TextView>(R.id.tv_cihuiliang_user)
+        tv_cihuiliang_user?.setText(""+user.cihuiliang)
         val button_user_exit=rootView?.findViewById<Button>(R.id.button_user_exit)
         button_user_exit?.setOnClickListener {
            activity?.finish()
@@ -50,6 +56,11 @@ class Navigation_User_Fragment : Fragment() {
         val button_user_yonghuxieyi=rootView?.findViewById<Button>(R.id.button_user_yonghuxieyi)
         button_user_yonghuxieyi?.setOnClickListener {
             val intent: Intent = Intent(activity, User_xieyi::class.java);
+            startActivity(intent);
+        }
+        val button_user_zhenti=rootView?.findViewById<Button>(R.id.button_user_zhenti)
+        button_user_zhenti?.setOnClickListener {
+            val intent: Intent = Intent(activity, User_zhenti::class.java);
             startActivity(intent);
         }
         val button_user_plan=rootView?.findViewById<Button>(R.id.button_user_plan)
@@ -77,18 +88,18 @@ class Navigation_User_Fragment : Fragment() {
             val intent: Intent = Intent(activity, User_guanyu::class.java);
             startActivity(intent);
         }
-        val button_user_more=rootView?.findViewById<Button>(R.id.button_user_more)
-        button_user_more?.setOnClickListener {
-            val intent: Intent = Intent(activity, User_more::class.java);
-            startActivity(intent);
-        }
+//        val button_user_more=rootView?.findViewById<Button>(R.id.button_user_more)
+//        button_user_more?.setOnClickListener {
+//            val intent: Intent = Intent(activity, User_more::class.java);
+//            startActivity(intent);
+//        }
 
 
 
         val button_user_fenxiang=rootView?.findViewById<Button>(R.id.button_user_fenxiang)
         button_user_fenxiang?.setOnClickListener {
-            val intent: Intent = Intent(activity, User_help::class.java);
-            startActivity(intent);
+//            val intent: Intent = Intent(activity, User_help::class.java);
+//            startActivity(intent);
             val sendIntent = Intent()
             sendIntent.action = Intent.ACTION_SEND
 // 比如发送文本形式的数据内容

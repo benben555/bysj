@@ -8,6 +8,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import com.example.a19124.bysj.*
+import com.example.a19124.bysj.Faxian.Faxian_read
+import com.example.a19124.bysj.Faxian.Faxian_wordTest
+import com.example.a19124.bysj.Faxian.Faxian_xiaojiangtang
 
 class Navigation_faxian_Fragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View?
@@ -26,12 +29,7 @@ class Navigation_faxian_Fragment : Fragment() {
         }
         val linear_faxian_wordtest=rootView.findViewById<LinearLayout>(R.id.linear_faxian_wordtest)
         linear_faxian_wordtest.setOnClickListener {
-            val intent: Intent = Intent(activity, Fuxi_xunlian::class.java);
-            startActivity(intent);
-        }
-        val linear_faxian_studygroup=rootView.findViewById<LinearLayout>(R.id.linear_faxian_studygroup)
-        linear_faxian_studygroup.setOnClickListener {
-            val intent: Intent = Intent(activity, Faxian_studygroup::class.java);
+            val intent: Intent = Intent(activity, Faxian_wordTest::class.java);
             startActivity(intent);
         }
 

@@ -1,14 +1,12 @@
-package com.example.a19124.bysj
+package com.example.a19124.bysj.Fuxi
 
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.view.KeyEvent
 import android.view.View
-import android.view.inputmethod.EditorInfo
-import android.widget.EditText
 import android.widget.LinearLayout
-import android.widget.TextView
+//import androidx.appcompat.app.AppCompatActivity
+import com.example.a19124.bysj.R
 
 class Fuxi_xunlian : AppCompatActivity() {
     public val EXTRA_recite:String="recite";
@@ -20,7 +18,7 @@ class Fuxi_xunlian : AppCompatActivity() {
         var linear_fuxi_xunlian=findViewById<LinearLayout>(R.id.linear_fuxi_xunlian)
         linear_fuxi_xunlian.setOnClickListener{
             Class.forName("com.mysql.jdbc.Driver")
-            val intent: Intent = Intent(this,Fuxi_xunlian_beidanci::class.java);
+            val intent: Intent = Intent(this, Fuxi_xunlian_beidanci::class.java);
      //       val msg = DBConnection.getWord("gaokao");
     //        intent.putExtra(EXTRA_recite,msg);
             startActivity(intent);

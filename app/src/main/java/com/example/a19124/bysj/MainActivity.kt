@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
 import android.widget.Button
+//import androidx.appcompat.app.AppCompatActivity
 import com.example.myapplication.*
 
 
@@ -14,13 +15,17 @@ class MainActivity : AppCompatActivity() {
 //    var stmt:Statement?=null
 //    var rs:ResultSet?=null
 //    var sql:String?=null
+    lateinit var user_name:String
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-    setTheme(R.style.AppTheme)
+  //  setTheme(R.style.AppTheme)
     setContentView(R.layout.activity_main)
-    
-    val intent: Intent = Intent(this, OpenActivity::class.java);
-    startActivity(intent);
+
+        user_name=intent.getStringExtra("user_name")?:"dd"
+    //username=get.
+//    setTheme(R.style.AppTheme)
+//    val intent: Intent = Intent(this, OpenActivity::class.java);
+//    startActivity(intent);
         setContentView(R.layout.activity_main)
         replaceFragment(Navigation_fuxi_Fragment())
 //        Log.d("stmt_messages","conn_first")
@@ -50,10 +55,11 @@ class MainActivity : AppCompatActivity() {
 
             replaceFragment(Navigation_faxian_Fragment())
         }
-        val button_tongji=findViewById<Button>(R.id.button_tongji)
-        button_tongji.setOnClickListener {
-            replaceFragment(Navigation_tongji_Fragment())
-        }
+//        val button_tongji=findViewById<Button>(R.id.button_tongji)
+//        button_tongji.setOnClickListener {
+//
+//            replaceFragment(Navigation_tongji_Fragment())
+//        }
         val button_shangcheng=findViewById<Button>(R.id.button_shangcheng)
         button_shangcheng.setOnClickListener {
           //  val intent: Intent = Intent(this, com.example.a19124.bysj.Navigation_Shangcheng_Fragment::class.java);
@@ -70,6 +76,10 @@ class MainActivity : AppCompatActivity() {
     fun replaceFragment(fragment: Fragment){
         val fragmentManager=supportFragmentManager
         val transaction=fragmentManager.beginTransaction()
+        val bundle=Bundle()
+        bundle.putString("user_name",user_name)
+        //bundle.putBoolean("sign_in",sign_in_tab.sign_in_flag)
+        fragment?.setArguments(bundle)
         transaction.replace(R.id.navigation,fragment)
         transaction.commit()
     }

@@ -21,7 +21,8 @@ class Register_zhuce : AppCompatActivity() {
         }
     }
     fun fanhui(view: View) {
-        val intent: Intent = Intent(this, User_Register::class.java)
-        startActivity(intent)
+//        val intent: Intent = Intent(this, User_Register::class.java)
+//        startActivity(intent)
+        finish()
     }
 }

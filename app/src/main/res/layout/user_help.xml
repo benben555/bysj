@@ -26,6 +26,7 @@
 
     </LinearLayout>
     <TextView
+        android:text="此单词app不会使用或者有错误怎么办？"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
@@ -33,6 +34,25 @@
         android:gravity="center"
         >
     </TextView>
+    <TextView
+        android:text="订单一直未处理怎么办？"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_gravity="center"
+        android:gravity="center"
+        >
+    </TextView>
+    <TextView
+        android:text="别担心，请联系管理员，管理员会随时解答您的问题。\n必要时可以语音通话"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_gravity="center"
+        android:gravity="center"
+        >
+    </TextView>
+
     <TextView
         android:layout_weight="3"
         android:layout_width="match_parent"

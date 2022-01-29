@@ -6,7 +6,7 @@
     <color name="bg_listview">#ffffff</color>
     <!-- 橘黄色 -->
     <color name="orange">#f3a819</color>
-
+    <color name="gray">#C0C0C0</color>
     <!-- 绿色 -->
     <color name="green">#7cad62</color>
 

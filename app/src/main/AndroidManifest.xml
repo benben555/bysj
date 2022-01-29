@@ -9,24 +9,26 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Plan_switchday"></activity>
+        <activity android:name=".Beidanci_finish"></activity>
+        <activity android:name=".Plan_switchday" />
         <activity android:name=".More_daka" />
         <activity android:name=".More_sousuo" />
         <activity android:name=".More_change" />
         <activity android:name=".User_more" />
-        <activity android:name=".Shangcheng_xiadanfukuan" />
-        <activity android:name=".Shangcheng_shouye" />
+        <activity android:name=".User_zhenti" />
+        <activity android:name=".shangcheng.Shangcheng_xiadanfukuan" />
+        <activity android:name=".shangcheng.Shangcheng_shouye" />
         <activity android:name=".Plan_switch" />
         <activity android:name=".User_xieyi" />
-        <activity android:name=".Shangcheng_xiaoxi" />
-        <activity android:name=".Shangcheng_dingdan" />
-        <activity android:name=".Fuxi_xunlian" />
-        <activity android:name=".Faxian_wordTest" />
-        <activity android:name=".Faxian_read" />
-        <activity android:name=".Fuxi_xunlian_beidanci" />
+        <activity android:name=".shangcheng.Shangcheng_xiaoxi" />
+        <activity android:name=".shangcheng.Shangcheng_dingdan" />
+        <activity android:name=".Fuxi.Fuxi_xunlian" />
+        <activity android:name=".Faxian.Faxian_wordTest" />
+        <activity android:name=".Faxian.Faxian_read" />
+        <activity android:name=".Fuxi.Fuxi_xunlian_beidanci" />
         <activity android:name=".User_task" />
-        <activity android:name=".Faxian_studygroup" /> <!-- <activity android:name=".wordtest" /> -->
-        <activity android:name=".Faxian_xiaojiangtang" />
+        <activity android:name=".Faxian.Faxian_studygroup" /> <!-- <activity android:name=".wordtest" /> -->
+        <activity android:name=".Faxian.Faxian_xiaojiangtang" />
         <activity android:name=".mall" /> <!-- // -->
         <!-- <activity android:name=".LingoesLd2Reader" /> -->
         <!-- // -->
@@ -38,9 +40,9 @@
         <activity android:name=".User_plan" />
         <activity android:name=".Register_zhuce" />
         <activity android:name=".Chaci_sousuo" />
-        <activity android:name=".OpenActivity" />
+        <activity android:name=".MainActivity" />
         <activity android:name=".User_Register" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".UserLoginMain">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -48,7 +50,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".Sousuo_xianshi" />
-        <activity android:name=".UserRegisterMain" />
+        <activity android:name=".OpenActivity" />
         <activity android:name=".UserRegisterMessage" />
         <activity android:name=".UserReplaceMessage" />
         <activity android:name=".UserReplacePassword" />
